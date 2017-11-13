@@ -11,7 +11,7 @@ import EditExpensePage from '../components/EditExpensePage';
 // import logo from './logo.svg';
 // import './App.css';
 
-class AppRouter extends React.Component {
+class AppRouter extends Component {
     render() {
         return(
         <BrowserRouter>
