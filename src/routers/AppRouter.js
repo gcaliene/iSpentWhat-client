@@ -13,11 +13,15 @@ import EditExpensePage from '../components/EditExpensePage';
 
 const AppRouter = () => {
     <BrowserRouter>
-        <Header />
-        <Route exact path="/" component={SplashPage} />
-        <Route exact path='/dashboard' component={DashboardPage}/>
-        <Route path="/dashboard/create" component={AddExpensePage} />
-        <Route path='/dashboard/edit/:id' component={EditExpensePage} />
+        <div>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={SplashPage} />
+                <Route exact path='/dashboard' component={DashboardPage}/>
+                <Route path="/dashboard/create" component={AddExpensePage} />
+                <Route path='/dashboard/edit/:id' component={EditExpensePage} />
+            </Switch>
+        </div>
     </BrowserRouter>
 
 }
