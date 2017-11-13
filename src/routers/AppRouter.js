@@ -11,18 +11,24 @@ import EditExpensePage from '../components/EditExpensePage';
 // import logo from './logo.svg';
 // import './App.css';
 
-const AppRouter = () => {
-    <BrowserRouter>
-        <div>
-            <Header />
-            <Switch>
-                <Route exact path="/" component={SplashPage} />
-                <Route exact path='/dashboard' component={DashboardPage}/>
-                <Route path="/dashboard/create" component={AddExpensePage} />
-                <Route path='/dashboard/edit/:id' component={EditExpensePage} />
-            </Switch>
-        </div>
-    </BrowserRouter>
+class AppRouter extends React.Component {
+    render() {
+        return(
+        <BrowserRouter>
+            <div>
+                <Header />
+                <Switch>
+                    <Route exact path="/" component={SplashPage} />
+                    <Route exact path='/dashboard' component={DashboardPage}/>
+                    <Route path="/dashboard/create" component={AddExpensePage} />
+                    <Route path='/dashboard/edit/:id' component={EditExpensePage} />
+                </Switch>
+            </div>
+        </BrowserRouter>
+        )
+    }
+
+
 
 }
 
