@@ -19,3 +19,12 @@ export default (expenses, { text, sortBy, startDate, endDate } ) => {
     })
 };
 
+// //After talking with Dan Abramov (founder of Redux) he has been preaching the colocation of functions called selectors with your reducers.
+
+// What is a selector?
+
+// Selectors can compute derived data, allowing Redux to store the minimal possible state.
+// Selectors are composable. They can be used as input to other selectors.
+// Let's turn our filter into a selector.
+
+//https://gist.github.com/abhiaiyer91/aaf6e325cf7fc5fd5ebc70192a1fa170

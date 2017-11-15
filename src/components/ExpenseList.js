@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import ExpenseItem from './ExpenseItem';
+import ExpenseListItem from './ExpenseListItem';
+import selectExpenses from '../reducers/selector';
 
 ///This is the regular unconnected component
 const ExpenseList = (props) => (
@@ -17,7 +18,7 @@ const ExpenseList = (props) => (
 
 const mapStateToProps = (state)=> {
     return {
-        expenses: sstate.expenses   //state.expenses,
+        expenses: selectExpenses(state.expenses, state.filters)         //state.expenses,
         // filters: state.filters //now we can use any filters we need in the ExpenseList component
     };
 };
