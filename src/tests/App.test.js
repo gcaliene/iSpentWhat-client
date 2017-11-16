@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from '../routers/AppRouter';
 import {Provider} from "react-redux";
-import store from '../store/store';
+import store from '../store/configureStore';
 
 
 it('renders without crashing', () => {
