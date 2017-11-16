@@ -12,6 +12,7 @@ class Header extends React.Component {
                 </NavLink>
                 <NavLink to='/create' activeClassName='is-active'>Add expense </NavLink>
                 <NavLink exact to='/' activeClassName='is-active'>Dashboard </NavLink>
+                <NavLink exact to='/login' activeClassName='is-active'> Login </NavLink>
             </header>
         )
     }
