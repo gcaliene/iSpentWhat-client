@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AppRouter from '../routers/AppRouter';
-import {Provider} from "react-redux";
-import store from '../store/configureStore';
 
-const store = configureStore();
+import { addExpense, editExpense, removeExpense } from "../actions/action";
+//when using objects and/or array we want to use toEqual
+//when bool numbers or strings then use to be
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-                  <Provider store={store}>    
-                    <AppRouter /> 
-                  </Provider>, div);
+
+it('should set up remove action object', () => {
+    const action = removeExpense({ id: '123abc' });
+    expect(action).toEqual({
+        type:'REMOVE_EXPENSE',
+        id: '123abc'
+    });
 });
