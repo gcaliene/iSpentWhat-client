@@ -10,8 +10,8 @@ class Header extends React.Component {
                 <NavLink exact to='/' activeClassName='is-active'>
                     <h1>iSpentWhat</h1>
                 </NavLink>
-                <NavLink to='/dashboard/create' activeClassName='is-active'>Add expense </NavLink>
-                <NavLink exact to='/dashboard' activeClassName='is-active'>Dashboard </NavLink>
+                <NavLink to='/create' activeClassName='is-active'>Add expense </NavLink>
+                <NavLink exact to='/' activeClassName='is-active'>Dashboard </NavLink>
             </header>
         )
     }

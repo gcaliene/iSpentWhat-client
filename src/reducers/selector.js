@@ -1,5 +1,3 @@
-
-
 import moment from 'moment';
 
 ////////////////////////// Get visisble expenses//////////////////////////////////////////////////////////////////////
@@ -28,3 +26,5 @@ export default (expenses, { text, sortBy, startDate, endDate } ) => {
 // Let's turn our filter into a selector.
 
 //https://gist.github.com/abhiaiyer91/aaf6e325cf7fc5fd5ebc70192a1fa170
+
+//there is also the way of using the RESELCT library https://redux.js.org/docs/recipes/ComputingDerivedData.html

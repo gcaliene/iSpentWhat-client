@@ -1,9 +1,14 @@
 import React from 'react';
+import ExpenseList from './ExpenseList';
+import ExpenseFilters from './ExpenseFilters'
 
-const DashboardPage = () => ( //remember not to use curlies brackets unless using returnrender.
+
+const DashboardPage = () => ( // implicitly returning so no curlies need
     <div>
-        <h1>This is the dashboard page</h1>
+        <ExpenseFilters />
+        <ExpenseList />
     </div>
-);
+)
+
 
 export default DashboardPage;

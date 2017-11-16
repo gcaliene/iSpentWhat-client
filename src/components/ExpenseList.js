@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import ExpenseListItem from './ExpenseListItem';
+import ExpenseItem from './ExpenseItem';
 import selectExpenses from '../reducers/selector';
 
 ///This is the regular unconnected component
@@ -9,7 +9,7 @@ const ExpenseList = (props) => (
         <h1>Expense List</h1>
         {/* {props.filters.text} */}
         {props.expenses.map((expense) => {
-            return <ExpenseListItem key={expense.id} {...expense}/>
+            return <ExpenseItem key={expense.id} {...expense}/>
         })}
     </div>    
 );
