@@ -11,10 +11,10 @@ const ExpenseList = (props) => (
         {props.expenses.map((expense) => {
             return <ExpenseItem key={expense.id} {...expense}/>
         })}
-    </div>    
+    </div>
 );
 
-/////////this is the functions
+/////////this is the function
 
 const mapStateToProps = (state)=> {
     return {
@@ -29,7 +29,7 @@ export default connect(mapStateToProps)(ExpenseList)
 
 
 // //for connected components it is easier to add the word Connected in front, to not get confused
-///    Below is not the common way to have it set up. it is just waht is above usually 
+///    Below is not the common way to have it set up. it is just waht is above usually
 // const ConnectedExpenseList = connect((state)=> {
 //     return {
 //         expenses: state.expenses
