@@ -3,6 +3,7 @@ import 'react-dates/initialize';
 import moment from 'moment';
 import { SingleDatePicker  } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
+// import $ from 'jquery';
 
 // const date = new Date(); this sucks
 const now = moment();
@@ -23,7 +24,7 @@ export default class ExpenseForm extends React.Component {
             error: ''
         };
     }
-    
+
 
     onDescriptionChange = (e) => {
         const description = e.target.value;
@@ -42,14 +43,14 @@ export default class ExpenseForm extends React.Component {
 
     onDateChange=(createdAt) => {
         if(createdAt) {
-            this.setState(() => ({ createdAt }));   //this prevents the user from deleting that value         
+            this.setState(() => ({ createdAt }));   //this prevents the user from deleting that value
         }
     };
 
     onFocusChange= ({focused}) => {
-        this.setState({calendarFocused : focused}) 
+        this.setState({calendarFocused : focused})
     };
-    
+
     onSubmit=(e) => {
         e.preventDefault();
         if(!this.state.description || !this.state.amount) {
@@ -57,11 +58,13 @@ export default class ExpenseForm extends React.Component {
         } else {
             this.setState(() =>({ error: ''})); //an empty string does not exist, therefore false
             this.props.onSubmit({
-                description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) * 100, //we are multiplying by 100 to wrok with pennies
-                createdAt: this.state.createdAt.valueOf(),
-                note:this.state.note
-            })
+              description: this.state.description,
+              amount: parseFloat(this.state.amount, 10) * 100, //we are multiplying by 100 to wrok with pennies
+              createdAt: this.state.createdAt.valueOf(),
+              note:this.state.note
+            });
+            console.log("after clicking submit");
+
         }
     }
 
@@ -70,14 +73,14 @@ export default class ExpenseForm extends React.Component {
             <div>
                 {this.state.error && <p>{this.state.error}</p> }
                 <form onSubmit={this.onSubmit}>
-                    <input 
+                    <input
                         type="text"
                         placeholder="Description"
                         autoFocus
                         value={this.state.description}
                         onChange={this.onDescriptionChange}
                     />
-                    <input 
+                    <input
                         type="text"
                         value={this.state.amount}
                         onChange={this.onAmountChange}
@@ -91,10 +94,10 @@ export default class ExpenseForm extends React.Component {
                         numberOfMonths={1}
                         isOutsideRange= {() => false}
                     />
-                    <textarea 
-                        name="" 
+                    <textarea
+                        name=""
                         value={this.state.note}
-                        cols="30" 
+                        cols="30"
                         rows="10"
                         placeholder="Add a note for you expense (optional)"
                         onChange={this.onNoteChange}
@@ -114,6 +117,6 @@ export default class ExpenseForm extends React.Component {
 //                         selected={this.state.createdAt}
 //                         onChange={this.handleChange}
 //                         showTimeSelect
-//                         dateFormat="LLL" 
+//                         dateFormat="LLL"
 //                         shouldCloseOnSelect={false}
 //                     />

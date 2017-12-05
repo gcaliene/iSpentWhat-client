@@ -1,21 +1,28 @@
 import moment from 'moment';
 
 ////////////////////////// Get visisble expenses//////////////////////////////////////////////////////////////////////
-export default (expenses, { text, sortBy, startDate, endDate } ) => {
-    return ( expenses.filter((expense) => {
-        const createdAtMoment = moment(expense.createdAt);
-        const startDateMatch =  startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true ;             //typeof startDate !== 'number' || expense.createdAt >= startDate;
-        const endDateMatch =   endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true ;                    //typeof endDate !== 'number' || expense.createdAt <= endDate;
-        const textMatch =  expense.description.toLowerCase().includes(text.toLowerCase()) ;
-        return startDateMatch && endDateMatch && textMatch;
-    }))
-        .sort(function(a,b){
-            if ( sortBy === 'date') {
-            return a.createdAt < b.createdAt ? 1: -1;
-        }  else {
-            return a.amount < b.amount ? 1 : -1;
-        }
+export default (expenses, { text, sortBy, startDate, endDate }) => {
+  return expenses
+    .filter(expense => {
+      const createdAtMoment = moment(expense.createdAt);
+      const startDateMatch = startDate
+        ? startDate.isSameOrBefore(createdAtMoment, 'day')
+        : true; //typeof startDate !== 'number' || expense.createdAt >= startDate;
+      const endDateMatch = endDate
+        ? endDate.isSameOrAfter(createdAtMoment, 'day')
+        : true; //typeof endDate !== 'number' || expense.createdAt <= endDate;
+      const textMatch = expense.description
+        .toLowerCase()
+        .includes(text.toLowerCase());
+      return startDateMatch && endDateMatch && textMatch;
     })
+    .sort(function(a, b) {
+      if (sortBy === 'date') {
+        return a.createdAt < b.createdAt ? 1 : -1;
+      } else {
+        return a.amount < b.amount ? 1 : -1;
+      }
+    });
 };
 
 // //After talking with Dan Abramov (founder of Redux) he has been preaching the colocation of functions called selectors with your reducers.
