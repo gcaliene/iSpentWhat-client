@@ -26,7 +26,7 @@ export default (state = expensesReducerDefaultState, action) => {
           return expense;
         }
       });
-    case 'FETCH_EXPENSE_SUCCESS':
+    case 'FETCH_EXPENSES_SUCCESS':
       return [...action.expenses]; //this is going to be an array not an object, Jim really helped out on this one.
 
     default:

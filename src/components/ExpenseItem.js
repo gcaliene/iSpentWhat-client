@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const ExpenseItem = ({
   dispatch,
   description,
-  id,
+  _id,
   amount,
   createdAt,
   note
 }) => (
   <div className="expense-item expense-item-wrapper">
-    <Link to={`/edit/${id}`} className="expense-item_description">
+    <Link to={`/edit/${_id}`} className="expense-item_description">
       <h3> {description} </h3>
     </Link>
     <div className="expense-item_note-amount-createdat">
