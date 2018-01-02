@@ -4,32 +4,14 @@ import ExpenseItem from './ExpenseItem';
 import selectExpenses from '../reducers/selector';
 import { fetchExpenses } from '../actions/action';
 
-///This is the regular unconnected component
-// const ExpenseList = (props) => (
-//     <div>
-//         <h1>Expense List</h1>
-//         {/* {props.filters.text} */}
-//         {props.expenses.map((expense) => {
-//             return <ExpenseItem key={expense.id} {...expense}/>
-//         })}
-//     </div>
-// );
-
-//This is a class component
-
 export class ExpenseList extends React.Component {
-  // constructor(props){
-  //   super(props);
-  //   this.props.dispatch(fetchExpenses());
-  //
-  //   }
   componentDidMount() {
     this.props.dispatch(fetchExpenses());
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    this.props.dispatch(fetchExpenses());
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   this.props.dispatch(fetchExpenses());
+  // }
 
   render() {
     return (

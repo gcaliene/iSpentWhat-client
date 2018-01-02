@@ -1,22 +1,26 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-
-
+import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
-    render() {
-        return(
-            <header>
-                <NavLink exact to='/' activeClassName='is-active'>
-                    <h1>iSpentWhat</h1>
-                </NavLink>
-                <NavLink to='/create' activeClassName='is-active'>Add expense </NavLink>
-                <NavLink exact to='/' activeClassName='is-active'>Dashboard </NavLink>
-                <NavLink exact to='/login' activeClassName='is-active'> Login </NavLink>
-            </header>
-        )
-    }
+  render() {
+    return (
+      <header>
+        <NavLink exact to="/" activeClassName="is-active">
+          <h1>iSpentWhat</h1>
+        </NavLink>
+        <NavLink to="/create" activeClassName="is-active">
+          Add expense{' '}
+        </NavLink>
+        <NavLink exact to="/" activeClassName="is-active">
+          Dashboard{' '}
+        </NavLink>
+        <NavLink exact to="/login" activeClassName="is-active">
+          {' '}
+          Login{' '}
+        </NavLink>
+      </header>
+    );
+  }
 }
 
 export default Header;
-

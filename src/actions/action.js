@@ -2,18 +2,6 @@
 import { API_BASE_URL } from '../config';
 
 //////////////////////////// ADD_EXPENSE //////////////////action generator///////////////////////////
-export const addExpense = (
-  { description = '', note = '', amount = 0, createdAt = 0 } = {}
-) => ({
-  type: 'ADD_EXPENSE',
-  expense: {
-    //id: uuid(), // mongoose does
-    description,
-    note,
-    amount,
-    createdAt
-  }
-});
 
 export const FETCH_EXPENSES_SUCCESS = 'FETCH_EXPENSES_SUCCESS';
 export const fetchExpensesSuccess = expenses => ({
@@ -37,16 +25,11 @@ export const fetchExpenses = () => dispatch => {
   // });
 };
 
-export const addExpenseToBackend = (
-  description,
-  note,
-  amount,
-  createdAt
-) => dispatch => {
+export const addExpenseToBackend = expense => dispatch => {
   fetch(`${API_BASE_URL}/expenses`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ description, note, amount, createdAt })
+    body: JSON.stringify(expense)
   })
     .then(response => response.json())
     .then(expenses => dispatch(fetchExpensesSuccess(expenses)));
@@ -56,15 +39,10 @@ export const addExpenseToBackend = (
 };
 
 /////////////ERROR////////////
-// export const fetchBoardError = ()
+//
 
 //////////////////action generator///////////////////////////
 //////////////////////////REMOVE_EXPENSE//////////////////////////////
-export const removeExpense = ({ _id } = {}) => ({
-  ///destructuring the expense object to get the id
-  type: 'REMOVE_EXPENSE',
-  _id
-});
 
 export const deleteExpenseFromBackend = _id => dispatch => {
   fetch(`${API_BASE_URL}/expenses/${_id}`, {

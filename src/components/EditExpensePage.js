@@ -12,7 +12,7 @@ const EditExpensePage = props => {
       <ExpenseForm
         expense={props.expense}
         onSubmit={expense => {
-          props.dispatch(editExpense(props.expense.id, expense)); //rememver that the editExpenses has 2 parameters in here
+          // props.dispatch(editExpense(props.expense.id, expense)); //rememver that the editExpenses has 2 parameters in here
           props.dispatch(editExpenseToBackend(props.match.params.id, expense));
           console.log('updated', expense);
           props.history.push('/');
@@ -23,7 +23,7 @@ const EditExpensePage = props => {
         onClick={() => {
           console.log(props);
           props.dispatch(deleteExpenseFromBackend(props.match.params.id));
-          props.dispatch(removeExpense(props.match.params.id));
+          // props.dispatch(removeExpense(props.match.params.id));
           props.history.push('/');
         }}
       >
