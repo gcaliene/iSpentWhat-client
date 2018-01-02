@@ -1,6 +1,51 @@
 //import uuid from 'uuid';
 import { API_BASE_URL } from '../config';
 
+//////USER REGISTRATION AND LOGIN//////////////
+const registerUserSuccess = (user)=> ({
+  type:'REGISTER_USER_SUCCESS',
+  user
+})
+
+export const loginUserSuccess = (token)=> ({
+  type:'LOGIN_USER_SUCCESS',
+  token
+})
+
+export const registerUser = (username, password)=>{
+  return (dispatch)=>{
+    fetch(`${API_BASE_URL}/api/users/`,{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({username, password})
+    })
+    .then(response=>response.json())
+    .then(json=>dispatch(registerUserSuccess(json)))
+    .catch(e=>console.log(e))
+  }
+}
+export const loginUser = (username, password)=>{
+  return (dispatch)=>{
+    fetch(`${API_BASE_URL}/api/auth/login`,{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({username, password})
+    })
+    .then(response=>response.json())
+    .then(json=>{
+      const {authToken}= json
+      console.log(authToken)
+      localStorage.setItem('token', authToken)
+      dispatch(loginUserSuccess(authToken))
+    })
+    .catch(e=>console.log(e))
+  }
+}
+
 //////////////////////////// ADD_EXPENSE //////////////////action generator///////////////////////////
 
 export const FETCH_EXPENSES_SUCCESS = 'FETCH_EXPENSES_SUCCESS';
@@ -32,9 +77,10 @@ export const addExpenseToBackend = expense => dispatch => {
     body: JSON.stringify(expense)
   })
     .then(response => response.json())
+    // .then(expenses => console.log(expenses))
     .then(expenses => dispatch(fetchExpensesSuccess(expenses)));
   // .catch(err => {
-  //     dispatch(fetchBoardError(err));
+  //   dispatch(fetchBoardError(err));
   // });
 };
 

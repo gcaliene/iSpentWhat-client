@@ -5,8 +5,9 @@ import { editExpense, editExpenseToBackend } from '../actions/action';
 import { removeExpense, deleteExpenseFromBackend } from '../actions/action';
 
 const EditExpensePage = props => {
+  console.log('Props below');
   console.log(props); //just making sure react router is actually passing stuff in
-  console.log(props.match.params.id); //gives id
+  console.log('props.match.params.id=' + props.match.params.id); //gives id
   return (
     <div>
       <ExpenseForm
@@ -21,6 +22,7 @@ const EditExpensePage = props => {
       <button
         expense={props.expense}
         onClick={() => {
+          console.log('props from delete below');
           console.log(props);
           props.dispatch(deleteExpenseFromBackend(props.match.params.id));
           // props.dispatch(removeExpense(props.match.params.id));
