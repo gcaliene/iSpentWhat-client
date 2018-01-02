@@ -5,7 +5,11 @@ import selectExpenses from '../reducers/selector';
 import { fetchExpenses } from '../actions/action';
 
 export class ExpenseList extends React.Component {
+  componentDidUpdate() {
+    this.props.dispatch(fetchExpenses());
+  }
   componentDidMount() {
+    //changed from componentDidMount to componentWillMount
     this.props.dispatch(fetchExpenses());
   }
 
