@@ -25,7 +25,7 @@ class FormRegister extends React.Component {
 
   handleLogout(props){
     localStorage.removeItem('token')
-    //redirect to homepage
+    //redirect to homepage using push
   }
 
   render() {
