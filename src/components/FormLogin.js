@@ -12,16 +12,18 @@ class FormLogin extends Component {
     const password = event.target.password.value;
     console.log(this.props);
     this.props.dispatch(loginUser(username, password));
-    //after dispatching, user is sent to the dashboard page with all current expenses and the ability to add a new expense
-    this.props.history.push('/dashboard');
-    // window.location = '/dashboard';
   }
 
   render() {
     return (
       <form onSubmit={e => this.handleSubmit(e)}>
-        <input type="text" name="username" />
-        <input type="password" name="password" />
+        <input type="text" name="username" placeholder="username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          required
+        />
         <button>Login</button>
       </form>
     );

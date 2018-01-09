@@ -60,8 +60,13 @@ export const loginUser = (username, password) => {
         console.log(authToken);
         localStorage.setItem('token', authToken);
         dispatch(loginUserSuccess(authToken));
+        window.location = '/dashboard';
       })
-      .catch(e => console.log(e));
+      .catch(e => {
+        console.log(e);
+        alert('Please Check Your Username and Password');
+        return (window.location = '/');
+      });
   };
 };
 
@@ -131,9 +136,9 @@ export const addExpenseToBackend = expense => dispatch => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(expense)
-  })
-    .then(response => response.json())
-    .then(expenses => dispatch(fetchExpensesSuccess(expenses)));
+  }).then(response => console.log(response));
+  // .then(response => response.json())
+  // .then(expenses => dispatch(fetchExpensesSuccess(expenses)));
 };
 
 /////////////ERROR////////////
@@ -151,16 +156,7 @@ export const deleteExpenseFromBackend = _id => dispatch => {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
     }
-  })
-    .then(response =>
-      response.json().then(json => {
-        return json;
-      })
-    )
-    .then(expenses => dispatch(fetchExpensesSuccess(expenses)));
-  // .catch(err => {
-  //     dispatch(fetchBoardError(err));
-  // });
+  }).then(() => dispatch(fetchExpenses()));
 };
 
 //////////////////action generator///////////////////////////
@@ -182,13 +178,7 @@ export const editExpenseToBackend = (_id, updates) => dispatch => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(updates)
-  })
-    .then(response => response.json())
-    .then(expenses => dispatch(fetchExpensesSuccess(expenses)))
-    .then(console.log('updated'));
-  // .catch(err => {
-  //     dispatch(fetchBoardError(err));
-  // });
+  }).then(() => dispatch(fetchExpenses()));
 };
 // });
 // };

@@ -23,8 +23,13 @@ class FormRegister extends React.Component {
     return (
       <div className="FormRegister">
         <form onSubmit={e => this.handleSubmit(e)}>
-          <input type="text" name="username" placeholder="username" />
-          <input type="password" name="password" placeholder="password" />
+          <input type="text" name="username" placeholder="username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            required
+          />
           <button>Register</button>
         </form>
 

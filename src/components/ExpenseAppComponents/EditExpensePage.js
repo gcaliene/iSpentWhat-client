@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
+import Header from '../Header';
+
 import {
   editExpenseToBackend,
   deleteExpenseFromBackend
@@ -12,6 +14,7 @@ const EditExpensePage = props => {
   console.log('props.match.params.id=' + props.match.params.id); //gives id
   return (
     <div>
+      <Header />
       <ExpenseForm
         expense={props.expense}
         onSubmit={expense => {

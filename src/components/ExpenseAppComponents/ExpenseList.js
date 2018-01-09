@@ -5,9 +5,9 @@ import selectExpenses from '../../reducers/selector';
 import { fetchExpenses } from '../../actions/action';
 
 export class ExpenseList extends React.Component {
-  componentDidUpdate() {
-    this.props.dispatch(fetchExpenses());
-  }
+  // componentDidUpdate() {
+  //   this.props.dispatch(fetchExpenses());
+  // }
   componentDidMount() {
     //changed from componentDidMount to componentWillMount
     this.props.dispatch(fetchExpenses());
@@ -16,14 +16,14 @@ export class ExpenseList extends React.Component {
   // componentDidUpdate(prevProps, prevState) {
   //   this.props.dispatch(fetchExpenses());
   // }
+  //this was below h1         {/* {props.filters.text} */}
 
   render() {
     return (
       <div>
         <h1>Expense List</h1>
-        {/* {props.filters.text} */}
         {this.props.expenses.map(expense => {
-          return <ExpenseItem key={expense.id} {...expense} />;
+          return <ExpenseItem key={expense._id} {...expense} />;
         })}
       </div>
     );

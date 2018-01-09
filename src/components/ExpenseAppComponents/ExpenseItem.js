@@ -8,7 +8,8 @@ const ExpenseItem = ({
   _id,
   amount,
   createdAt,
-  note
+  note,
+  user
 }) => (
   <div className="expense-item expense-item-wrapper">
     <Link to={`/edit/${_id}`} className="expense-item_description">
@@ -18,6 +19,7 @@ const ExpenseItem = ({
       <div>{note}</div>
       <div>
         ${amount / 100} <div>Created at: {createdAt}</div>
+        <div>_id #: {user}</div>
       </div>
     </div>
   </div>

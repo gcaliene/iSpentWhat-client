@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import { getCurrentUser } from '../actions/action';
 
-import Header from '../components/Header';
 import FrontPage from '../components/FrontPage';
 import DashboardPage from '../components/ExpenseAppComponents/DashboardPage';
 import AddExpensePage from '../components/ExpenseAppComponents/AddExpensePage';
@@ -19,8 +18,6 @@ class AppRouter extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Header />
-
           <Switch>
             <Route exact path="/" component={FrontPage} />
             <Route exact path="/dashboard" component={DashboardPage} />

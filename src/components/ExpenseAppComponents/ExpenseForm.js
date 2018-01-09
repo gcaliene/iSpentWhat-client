@@ -3,16 +3,20 @@ import 'react-dates/initialize';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import { connect } from 'react-redux';
 // import $ from 'jquery';
 
 // const date = new Date(); this sucks
 // const now = moment();
 // console.log(now.format('MMM Do, YYYY'));
 
-export default class ExpenseForm extends React.Component {
+class ExpenseForm extends React.Component {
   //this state is only temporary because it will only be there until user submits form and sends it to redux
   constructor(props) {
     super(props);
+    // console.log(props);
+
+    // console.log(username);
     //we have to make sure that the page still works if there is an expense or not
     //thisis why we have to bring in the props
     this.state = {
@@ -24,6 +28,16 @@ export default class ExpenseForm extends React.Component {
       error: ''
     };
   }
+
+  // componentDidMount() {
+  //   this.getUserName();
+  // }
+  //
+  // getUserName = () => {
+  //   const username = this.props.user.toString();
+  //   console.log(typeof username);
+  //   console.log(this);
+  // };
 
   onDescriptionChange = e => {
     const description = e.target.value;
@@ -52,6 +66,7 @@ export default class ExpenseForm extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
+    console.log(this.props.user);
     if (!this.state.description || !this.state.amount) {
       this.setState(() => ({ error: 'Please provide description and amount' })); //this uses an updater function
     } else {
@@ -60,9 +75,10 @@ export default class ExpenseForm extends React.Component {
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100, //we are multiplying by 100 to wrok with pennies
         createdAt: this.state.createdAt.valueOf(),
-        note: this.state.note
+        note: this.state.note,
+        user: this.props.user
       });
-      console.log(this);
+      // console.log(this);
     }
   };
 
@@ -110,6 +126,18 @@ export default class ExpenseForm extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  console.log(state.user.user);
+  console.log(typeof state.user.user);
+  const user = state.user.user;
+
+  return {
+    user: user
+  };
+};
+
+export default connect(mapStateToProps)(ExpenseForm);
 
 //auto
 

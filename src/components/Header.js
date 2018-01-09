@@ -5,17 +5,17 @@ import '../css/Header.css';
 // import { protectedEnpointTesting, getCurrentUser } from '../actions/action';
 
 class Header extends React.Component {
-  componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps);
-    console.log(prevState);
+  componentDidMount() {
+    this.renderContent();
+  }
+
+  componentWillUpdate() {
     this.renderContent();
   }
 
   renderContent() {
-    console.log(this.props);
-    console.log(this);
     const username = this.props.user.toString();
-    console.log(typeof this.props.user);
+    // console.log(typeof this.props.user);
     if (typeof this.props.user !== 'string') {
       return (
         <li>
@@ -24,7 +24,7 @@ class Header extends React.Component {
       );
     } else {
       return [
-        console.log(username),
+        // console.log(username),
         <button key="1" onClick={() => this.handleLogout()}>
           {' '}
           Logout{' '}
@@ -36,18 +36,10 @@ class Header extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.props.dispatch(getCurrentUser());
-  // }
-
   handleLogout() {
     localStorage.removeItem('token');
     window.location = '/';
   }
-
-  // handleProtectedEndpoint() {
-  //   this.props.dispatch(protectedEnpointTesting());
-  // }
 
   render() {
     return (
