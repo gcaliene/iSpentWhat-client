@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseItem from './ExpenseItem';
-import selectExpenses from '../reducers/selector';
-import { fetchExpenses } from '../actions/action';
+import selectExpenses from '../../reducers/selector';
+import { fetchExpenses } from '../../actions/action';
 
 export class ExpenseList extends React.Component {
   componentDidUpdate() {

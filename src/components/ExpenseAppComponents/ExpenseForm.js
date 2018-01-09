@@ -6,8 +6,8 @@ import 'react-dates/lib/css/_datepicker.css';
 // import $ from 'jquery';
 
 // const date = new Date(); this sucks
-const now = moment();
-console.log(now.format('MMM Do, YYYY'));
+// const now = moment();
+// console.log(now.format('MMM Do, YYYY'));
 
 export default class ExpenseForm extends React.Component {
   //this state is only temporary because it will only be there until user submits form and sends it to redux
