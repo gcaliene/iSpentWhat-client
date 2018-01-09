@@ -2,35 +2,38 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../css/Header.css';
-import { protectedEnpointTesting, getCurrentUser } from '../actions/action';
+// import { protectedEnpointTesting, getCurrentUser } from '../actions/action';
 
 class Header extends React.Component {
-  renderContent() {
-    console.log(this.props.user);
-    switch (this.props.user) {
-      case null:
-        return; //not show anything to prevent flash
-      case false:
-        return (
-          <li>
-            <a href="/auth/google">Login With Google</a>
-          </li>
-        );
-      default:
-        return [
-          <li key="1"> Hello, {this.props.user} </li>
-          // <li key="3" style={{ margin: '0 10px' }}>
-          //   Credits: {this.props.auth.credits}
-          // </li>,
-          // <li key="2">
-          //   <a href="/api/logout">Logout</a>
-          // </li>
-        ];
-    }
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps);
+    console.log(prevState);
+    this.renderContent();
   }
 
-  componentDidMount() {
-    this.props.dispatch(getCurrentUser());
+  renderContent() {
+    console.log(this.props);
+    console.log(this);
+    const username = this.props.user.toString();
+    console.log(typeof this.props.user);
+    if (typeof this.props.user !== 'string') {
+      return (
+        <li>
+          <a href="/">Login</a>
+        </li>
+      );
+    } else {
+      return [
+        console.log(username),
+        <button key="1" onClick={() => this.handleLogout()}>
+          {' '}
+          Logout{' '}
+        </button>,
+        <div key="2" style={{ color: 'white' }}>
+          Welcome {username}
+        </div>
+      ];
+    }
   }
 
   // componentDidMount() {
@@ -40,12 +43,11 @@ class Header extends React.Component {
   handleLogout() {
     localStorage.removeItem('token');
     window.location = '/';
-    //redirect to homepage using push
   }
 
-  handleProtectedEndpoint() {
-    this.props.dispatch(protectedEnpointTesting());
-  }
+  // handleProtectedEndpoint() {
+  //   this.props.dispatch(protectedEnpointTesting());
+  // }
 
   render() {
     return (
@@ -60,18 +62,14 @@ class Header extends React.Component {
           Add expense{' '}
         </NavLink>
 
-        <NavLink exact to="/login" activeClassName="is-active">
-          {() => this.renderContent()}
-        </NavLink>
-        <button onClick={() => this.handleLogout()}> Logout </button>
-        <button onClick={() => this.renderContent()}>
-          TEST PROTECTED ENDPOINT
-        </button>
+        <div className="main-header-username">{this.renderContent()}</div>
+
+        <button onClick={() => this.renderContent()} />
       </header>
     );
   }
 }
-
+//
 const mapStateToProps = state => {
   // console.log(state.user.user);
   return {
