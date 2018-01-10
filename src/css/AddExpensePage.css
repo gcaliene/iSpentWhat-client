@@ -1,0 +1,30 @@
+.add-expense-wrapper {
+  background-color: #1d1d1d;
+}
+
+.add-expense-wrapper h1 {
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+.cross-exit {
+  display: none;
+}
+
+@media only screen and (max-width: 420px) {
+  .add-expense-wrapper {
+    margin: 10px;
+    border: 2px solid #4c9cf1;
+    max-height: 500px;
+    min-height: 500px;
+  }
+  .cross-exit {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 56px;
+    height: 70px;
+    z-index: 10;
+    color: #cc3300;
+  }
+}

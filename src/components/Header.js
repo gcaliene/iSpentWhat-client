@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../css/Header.css';
+// import '../css/container.css';
 // import { protectedEnpointTesting, getCurrentUser } from '../actions/action';
 
 class Header extends React.Component {
@@ -43,21 +44,23 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="main-header">
-        <NavLink exact to="/" className="header-logo">
-          <h1 className="is-active-logo">iSpentWhat</h1>
-        </NavLink>
-        <NavLink exact to="/dashboard" activeClassName="is-active">
-          Dashboard{' '}
-        </NavLink>
-        <NavLink to="/dashboard/create" activeClassName="is-active">
-          Add expense{' '}
-        </NavLink>
-
-        <div className="main-header-username">{this.renderContent()}</div>
-
-        <button onClick={() => this.renderContent()} />
-      </header>
+      <div className="main-header ">
+        <header>
+          <div className="container">
+            <NavLink exact to="/dashboard" className="header-logo float-left">
+              <h1 className="is-active-logo">iSpentWhat</h1>
+            </NavLink>
+            <div className="float-right">
+              <NavLink to="/dashboard/create" activeClassName="is-active">
+                Add expense{' '}
+              </NavLink>
+              <span className="main-header-username">
+                {this.renderContent()}
+              </span>
+            </div>
+          </div>
+        </header>
+      </div>
     );
   }
 }

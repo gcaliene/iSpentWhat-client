@@ -1,12 +1,24 @@
 header {
-  background-color: black;
-  margin: 0;
+  background-color: #232323;
+  text-align: center;
+  /* min-width: auto; */
+
+  min-height: 80px;
 }
 
 .header-logo {
-  color: blue;
+  color: #0099ff;
   text-decoration: none;
   margin: 0;
+  padding: 15px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
 
 .is-active-logo {

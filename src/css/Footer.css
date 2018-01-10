@@ -1,0 +1,17 @@
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* padding: 1rem; */
+  padding: 1px;
+  background-color: #efefef;
+  text-align: center;
+  /* line-height: 0.1; */
+}
+
+@media only screen and (max-width: 420px) {
+  .footer {
+    position: relative;
+  }
+}

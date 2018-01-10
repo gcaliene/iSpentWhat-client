@@ -1,8 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
 import ExpenseList from './ExpenseList';
 import ExpenseFilters from './ExpenseFilters';
 import Header from '../Header';
+import { Footer } from '../Footer';
+
+import '../../css/dashboard.css';
+import '../../css/Footer.css';
 
 class DashboardPage extends React.Component {
   componentWillMount() {
@@ -18,9 +24,17 @@ class DashboardPage extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <ExpenseFilters />
-        <ExpenseList />
+        <div className=" dashboard">
+          <Header />
+          <div className="container">
+            <ExpenseFilters />
+            <ExpenseList />
+          </div>
+          <NavLink to="/dashboard/create" activeClassName="is-active">
+            <i className="fas fa-plus-circle fa-5x plus-circle" />
+          </NavLink>
+        </div>
+        <Footer />
       </div>
     );
   }

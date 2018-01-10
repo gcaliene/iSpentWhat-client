@@ -1,6 +1,8 @@
 import React from 'react';
 import FormRegister from './FormRegister';
 import Header from './Header';
+import { Footer } from './Footer';
+import '../css/container.css';
 
 class FrontPage extends React.Component {
   constructor(props) {
@@ -10,15 +12,18 @@ class FrontPage extends React.Component {
 
   render() {
     return (
-      <div className="main-container">
+      <div className="FrontPage-container ">
         <Header />
-        <div>
-          <p>
-            Just some random text where most of the design would go to and the
-            about section would go?
-          </p>
+        <div className="front-page-content container">
+          <div className="front-page-content-text">
+            <p>
+              Just some random text where most of the design would go to and the
+              about section would go?
+            </p>
+          </div>
+          <FormRegister />
         </div>
-        <FormRegister />
+        <Footer />
       </div>
     );
   }

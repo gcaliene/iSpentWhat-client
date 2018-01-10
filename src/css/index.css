@@ -2,4 +2,29 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  /* background-color: #232323; */
+  /* background-color: white; */
+}
+
+a {
+  color: #4c9cf1;
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #4371a1;
+}
+
+ul {
+  list-style: none;
+}
+
+@media only screen and (max-width: 420px) {
+  body {
+    /* background-color: #4c9cf1; */
+    /* background-color: white; */
+    background-color: #1d1d1d;
+  }
 }

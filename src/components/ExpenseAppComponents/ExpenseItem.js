@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import moment from 'moment';
+
+import '../../css/ExpenseItem.css';
 
 ///This is the regular unconnected component
 const ExpenseItem = ({
@@ -15,15 +18,23 @@ const ExpenseItem = ({
 }) => {
   if (user === loggedInUser) {
     return (
-      <div className="expense-item expense-item-wrapper">
-        <Link to={`/edit/${_id}`} className="expense-item_description">
-          <h3> {description} </h3>
-        </Link>
-        <div className="expense-item_note-amount-createdat">
-          <div>{note}</div>
-          <div>
-            ${amount / 100} <div>Created at: {createdAt}</div>
-            <div>_id #: {user}</div>
+      <div className="expense-item-list">
+        <div className=" expense-item-wrapper">
+          <div className="expense-item">
+            <Link to={`/edit/${_id}`} className="expense-item_description">
+              <h4> {description} </h4>
+            </Link>
+            <div className="expense-item_note-amount-createdat">
+              <div className="">
+                <p>
+                  <span className="expense-item-amount">${amount / 100}</span>
+                </p>
+                <br />
+                <div>{note}</div>
+                <br />
+                <div>{moment(createdAt).format('MMM Do YY')}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

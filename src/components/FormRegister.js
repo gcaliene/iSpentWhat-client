@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { registerUser, loginUserSuccess } from '../actions/action';
 import FormLogin from './FormLogin';
 
+import '../css/FormRegister.css';
+import '../css/container.css';
+
 class FormRegister extends React.Component {
   componentDidMount() {
     // console.log('Registration form ready');
@@ -21,7 +24,7 @@ class FormRegister extends React.Component {
 
   render() {
     return (
-      <div className="FormRegister">
+      <div className="FormRegister container">
         <form onSubmit={e => this.handleSubmit(e)}>
           <input type="text" name="username" placeholder="username" required />
           <input
