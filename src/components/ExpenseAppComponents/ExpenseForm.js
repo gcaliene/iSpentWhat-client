@@ -73,27 +73,37 @@ class ExpenseForm extends React.Component {
   render() {
     return (
       <div className="expense-form-wrapper">
-        {this.state.error && <p>{this.state.error}</p>}
+        <div className="error_wrapper">
+          {' '}
+          {this.state.error && <p>{this.state.error}</p>}
+        </div>
         <form onSubmit={this.onSubmit}>
+          <div className="input-label">Expense</div>
           <input
             className="expense-form-description"
             type="text"
             id="description"
-            placeholder="Brief description, please."
+            placeholder="Brief expense title (required)"
             autoFocus
-            maxLength="45"
+            maxLength="25"
+            size="24"
             value={this.state.description}
             onChange={this.onDescriptionChange}
           />
+          <div className="input-label">Amount (USD)</div>
+
           <input
             className="expense-form-amount"
             type="text"
             id="amount"
             maxLength="14"
+            size="14"
             value={this.state.amount}
             onChange={this.onAmountChange}
-            placeholder="Amount"
+            placeholder="Amount (required)"
           />
+          <br />
+          <div className="input-label">Date</div>
           <SingleDatePicker
             id="createdAt"
             date={this.state.createdAt}
@@ -103,18 +113,25 @@ class ExpenseForm extends React.Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
+          <br />
+          <div className="input-label">
+            <br />Amount (USD)
+          </div>
           <textarea
             className="expense-form-note"
             name=""
             id="note"
             value={this.state.note}
             cols="30"
-            rows="10"
+            rows="9"
             placeholder="Add a note for you expense (optional). Max 200 characters."
             maxLength="200"
             onChange={this.onNoteChange}
           />
-          <button>Add Expense</button>
+          <br />
+          <button className="input-button">
+            <i class="fas fa-check fa-4x" />
+          </button>
         </form>
       </div>
     );

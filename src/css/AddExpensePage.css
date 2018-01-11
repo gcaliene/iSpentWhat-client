@@ -19,8 +19,8 @@
   .add-expense-wrapper {
     margin: 10px;
     border: 2px solid #4c9cf1;
-    max-height: 500px;
-    min-height: 500px;
+    max-height: 600px;
+    min-height: 600px;
   }
   .cross-exit {
     display: block;
