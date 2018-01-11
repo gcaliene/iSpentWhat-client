@@ -16,6 +16,10 @@
   font-weight: 500;
 }
 
+.expense-form-note {
+  word-wrap: break-word;
+}
+
 .input-label {
   color: #0099ff;
 }

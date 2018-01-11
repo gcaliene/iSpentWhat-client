@@ -46,4 +46,5 @@
 .expense-item-note {
   padding-right: 35px;
   padding-left: 35px;
+  word-wrap: break-word;
 }
