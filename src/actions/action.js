@@ -88,6 +88,7 @@ export const getCurrentUser = () => {
       .then(res => res.json())
       .then(username => {
         dispatch(fetchCurrentUserSuccess(username));
+        console.log(process.env);
       })
       .catch(e => console.log(e));
   };
