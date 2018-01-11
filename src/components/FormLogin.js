@@ -16,14 +16,19 @@ class FormLogin extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
+      <form
+        onSubmit={e => this.handleSubmit(e)}
+        className="FormRegister-container-form"
+      >
         <input type="text" name="username" placeholder="username" required />
+        <br />
         <input
           type="password"
           name="password"
           placeholder="password"
           required
         />
+        <br /> <br />
         <button>Login</button>
       </form>
     );

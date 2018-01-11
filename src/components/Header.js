@@ -37,17 +37,72 @@ class Header extends React.Component {
     });
   }
 
+  handleLoginRegister() {
+    $('#FrontPage-FromRegister').removeClass('hidden');
+    $('#123').removeClass('hidden');
+    $('#header-Register-Login-button').addClass('hidden');
+  }
+  handleLoginRegisterClose() {
+    $('#FrontPage-FromRegister').addClass('hidden');
+    $('#123').addClass('hidden');
+    $('#header-Register-Login-button').removeClass('hidden');
+  }
+
+  //
+  // handlePathToAddExpensePage() {
+  //   $('#add-expense-button').on('click', function() {
+  //     $('#add-expense-button').addClass('hidden');
+  //     $('#close-add-expense-component-button').removeClass('hidden');
+  //   });
+  // }
+
+  // handlePathBackFromAddExpensePage() {
+  //   $('#close-add-expense-component-button').on('click', function() {
+  //     $('#close-add-expense-component-button').addClass('hidden');
+  //     $('#add-expense-button').removeClass('hidden');
+  //   });
+  // }
+  //
+  // <button
+  //   id="add-expense-button"
+  //   className="header-button float-right "
+  //   onClick={() => this.handlePathToAddExpensePage()}
+  // >
+  //   {' '}
+  //   <NavLink to="/dashboard/create" activeClassName="is-active">
+  //     <i class="fas fa-plus fa-2x" />{' '}
+  //   </NavLink>
+  // </button>,
+  // <button
+  //   id="close-add-expense-component-button"
+  //   className="header-button float-right hidden"
+  //   onClick={() => this.handlePathBackFromAddExpensePage()}
+  // >
+  //   <NavLink to="/dashboard/" activeClassName="is-active">
+  //     <i class="fas fa-times fa-2x" />
+  //   </NavLink>
+  // </button>,
+
   renderContent() {
     // const username = this.props.user.toString();
     // console.log(typeof this.props.user);
     if (typeof this.props.user !== 'string') {
-      return (
-        <NavLink exact to="/">
-          <button className="header-button-login float-right">
-            <i className="fas fa-sign-in-alt fa-2x" />
-          </button>
-        </NavLink>
-      );
+      return [
+        <button
+          id="123"
+          className="header-button-login float-right hidden "
+          onClick={() => this.handleLoginRegisterClose()}
+        >
+          <i className="fa fa-times fa-2x" aria-hidden="true" />
+        </button>,
+        <button
+          id="header-Register-Login-button"
+          className="header-button-login float-right"
+          onClick={() => this.handleLoginRegister()}
+        >
+          <i className="fas fa-sign-in-alt fa-2x" />
+        </button>
+      ];
     } else {
       return [
         <button
@@ -57,6 +112,7 @@ class Header extends React.Component {
         >
           <i className="fas fa-sign-out-alt fa-2x" />
         </button>,
+
         <button
           id="close-filter-button"
           className="header-button float-right hidden"
@@ -64,6 +120,7 @@ class Header extends React.Component {
         >
           <i className="fa fa-times fa-2x" aria-hidden="true" />
         </button>,
+
         <button
           id="filter-button"
           className="header-button float-right filter-button"

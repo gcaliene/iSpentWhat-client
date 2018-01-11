@@ -19,7 +19,7 @@ const EditExpensePage = props => {
   return (
     <div>
       <Header />
-      <div className="container add-expense-wrapper">
+      <div className="container edit-expense-wrapper">
         <h1 className="add-expense-title">Edit Expense</h1>
 
         <ExpenseForm

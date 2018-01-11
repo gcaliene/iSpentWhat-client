@@ -1,13 +1,21 @@
 import React from 'react';
 import FormRegister from './FormRegister';
 import Header from './Header';
-import { Footer } from './Footer';
+import { Footer } from './FrontPageFooter';
 import '../css/container.css';
+import '../css/FrontPage.css';
 
 class FrontPage extends React.Component {
   constructor(props) {
     super(props);
     console.log(props);
+  }
+  componentWillMount() {
+    const authToken = localStorage.getItem('token');
+    console.log(typeof authToken);
+    if (typeof authToken === 'string') {
+      window.location = '/dashboard';
+    }
   }
 
   render() {
@@ -17,11 +25,31 @@ class FrontPage extends React.Component {
         <div className="front-page-content container">
           <div className="front-page-content-text">
             <p>
-              Just some random text where most of the design would go to and the
-              about section would go?
+              A quick and simple way to manage your spending when you really
+              don't want to.
             </p>
+            <div className="icon-container">
+              <span className="icon">
+                <i className="far fa-gem" />
+              </span>
+              <span className="icon">
+                <i className="fab fa-bitcoin" />
+              </span>
+              <span className="icon">
+                <i className="far fa-money-bill-alt" />
+              </span>
+              <span className="icon">
+                <i className="far fa-credit-card" />
+              </span>
+            </div>
           </div>
-          <FormRegister />
+          <br />
+          <div
+            id="FrontPage-FromRegister"
+            className="hidden front-page-FormRegister"
+          >
+            <FormRegister />
+          </div>
         </div>
         <Footer />
       </div>

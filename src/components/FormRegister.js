@@ -24,19 +24,35 @@ class FormRegister extends React.Component {
 
   render() {
     return (
-      <div className="FormRegister container">
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <input type="text" name="username" placeholder="username" required />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            required
-          />
-          <button>Register</button>
-        </form>
+      <div className="container">
+        <div className="FormRegister-container">
+          <div className="FormRegister-container-border">
+            <form
+              onSubmit={e => this.handleSubmit(e)}
+              className="FormRegister-container-form"
+            >
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                required
+              />
+              <br />
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                required
+              />
+              <br /> <br />
+              <button>Register</button>
+            </form>
+            <br />
+            <br />
 
-        <FormLogin />
+            <FormLogin />
+          </div>
+        </div>
       </div>
     );
   }

@@ -8,12 +8,31 @@
   text-align: center;
   color: white;
   line-height: 0.5;
+}
 
-  /* line-height: 0.1; */
+.footer-front-page {
+  position: fixed;
+  /* right: 15px; */
+  bottom: 0px;
+  height: 40px;
+  z-index: 10;
+  /* background-color: red; */
 }
 
 @media only screen and (max-width: 420px) {
   .footer {
     position: relative;
+  }
+  .footer-front-page {
+    position: relative;
+    height: 0px;
+    bottom: 0px;
+
+    /* position: fixed;
+    /* right: 15px; */
+    /* bottom: 0px;
+    height: 40px;
+    z-index: 10; */
+    /* background-color: red; */
   }
 }

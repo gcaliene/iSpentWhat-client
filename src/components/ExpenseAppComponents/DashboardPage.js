@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-// import $ from 'jquery';
 
 import ExpenseList from './ExpenseList';
 import ExpenseFilters from './ExpenseFilters';
@@ -32,7 +31,7 @@ class DashboardPage extends React.Component {
             <ExpenseList />
           </div>
           <NavLink to="/dashboard/create" activeClassName="is-active">
-            <i className="fas fa-plus-circle fa-5x plus-circle" />
+            <i className="fas fa-plus fa-5x plus-circle" />
           </NavLink>
         </div>
         <Footer />

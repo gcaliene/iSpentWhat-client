@@ -1,5 +1,12 @@
 .add-expense-wrapper {
-  background-color: #1d1d1d;
+  background-color: #232323;
+  border: 2px solid #4c9cf1;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 82px;
+  margin-bottom: 0px;
+  border: 2px solid #4c9cf1;
+  max-height: 550px;
 }
 
 .add-expense-wrapper h1 {
@@ -7,8 +14,36 @@
   padding-top: 10px;
 }
 
+.edit-expense-wrapper {
+  background-color: #232323;
+  border: 2px solid #4c9cf1;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 82px;
+  margin-bottom: 0px;
+  border: 2px solid #4c9cf1;
+  max-height: 650px;
+}
+
+.edit-expense-wrapper h1 {
+  margin-top: 0;
+  padding-top: 10px;
+}
+
 .cross-exit {
-  display: none;
+  display: block;
+  position: fixed;
+  z-index: 100;
+  right: 125px;
+  bottom: 75px;
+  height: 70px;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  color: #cc3300;
+}
+button {
+  background-color: #232323;
 }
 
 .add-expense-title {

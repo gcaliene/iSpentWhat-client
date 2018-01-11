@@ -1,4 +1,40 @@
-.FormRegister {
-  background-color: blue;
-  padding: ;
+.FormRegister-container {
+  /* background-color: blue; */
+  /* padding: 30px; */
+  /* max-width: 360px; */
+  margin-bottom: 55px;
+  /* width: 90vh; */
+  /* height: 100vh; */
+  margin-top: -40vh;
+  padding-top: 50vh;
+  /* padding-bottom: 10vh; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  z-index: 1000000;
+  /* border: 2px solid white; */
+}
+
+.FormRegister-container-border {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+  padding-bottom: 20px;
+  border: 2px solid #0099ff;
+  background-color: #232323;
+}
+
+input {
+  margin-top: 20px;
+}
+
+.FormRegister-container-form button {
+  background-color: #0099ff;
+  color: white;
+  border: 1px solid white; /* Green */
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
 }

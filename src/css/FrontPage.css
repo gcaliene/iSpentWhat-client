@@ -1,0 +1,40 @@
+.front-page-content-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2.23rem;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 25vh;
+  color: white;
+}
+.front-page-content-text {
+}
+
+.icon-container {
+  padding: 15px;
+  color: #33ccff;
+}
+
+.icon-container span {
+  color: #33ccff;
+  padding-left: 35px;
+}
+
+@media only screen and (max-width: 420px) {
+  .icon-container {
+    padding: 0px;
+    color: #33ccff;
+  }
+  .icon-container span {
+    color: #33ccff;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .front-page-content-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.23rem;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 20vh;
+    color: white;
+  }
+}

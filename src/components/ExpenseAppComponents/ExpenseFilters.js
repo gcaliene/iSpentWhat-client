@@ -62,6 +62,7 @@ class ExpenseFilters extends React.Component {
           <span className="expense-filter-date-label">
             Show expenses from a range of dates.
           </span>
+          <br />
           <DateRangePicker
             showDefaultInputIcon
             startDate={this.props.filters.startDate}

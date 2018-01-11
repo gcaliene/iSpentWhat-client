@@ -55,3 +55,9 @@ a {
 .is-active-logo {
   margin: 0;
 }
+
+@media only screen and (max-width: 420px) {
+  #add-expense-button {
+    display: none;
+  }
+}
