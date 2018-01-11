@@ -90,12 +90,14 @@ class Header extends React.Component {
       return [
         <button
           id="123"
+          key="123"
           className="header-button-login float-right hidden "
           onClick={() => this.handleLoginRegisterClose()}
         >
           <i className="fa fa-times fa-2x" aria-hidden="true" />
         </button>,
         <button
+          key="234"
           id="header-Register-Login-button"
           className="header-button-login float-right"
           onClick={() => this.handleLoginRegister()}
@@ -114,6 +116,7 @@ class Header extends React.Component {
         </button>,
 
         <button
+          key="235"
           id="close-filter-button"
           className="header-button float-right hidden"
           onClick={() => this.handleFilterClose()}
@@ -122,6 +125,7 @@ class Header extends React.Component {
         </button>,
 
         <button
+          key="236"
           id="filter-button"
           className="header-button float-right filter-button"
           onClick={() => this.handleFilter()}
