@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../css/Header.css';
+import $ from 'jquery';
+
 // import '../css/container.css';
 // import { protectedEnpointTesting, getCurrentUser } from '../actions/action';
 
@@ -14,32 +16,63 @@ class Header extends React.Component {
     this.renderContent();
   }
 
+  handleLogout() {
+    localStorage.removeItem('token');
+    window.location = '/';
+  }
+
+  handleFilter() {
+    $('#filter-button').on('click', function() {
+      $('#filter').removeClass('hidden');
+      $('#filter-button').addClass('hidden');
+      $('#close-filter-button').removeClass('hidden');
+    });
+  }
+
+  handleFilterClose() {
+    $('#close-filter-button').on('click', function() {
+      $('#filter').addClass('hidden');
+      $('#filter-button').removeClass('hidden');
+      $('#close-filter-button').addClass('hidden');
+    });
+  }
+
   renderContent() {
     const username = this.props.user.toString();
     // console.log(typeof this.props.user);
     if (typeof this.props.user !== 'string') {
       return (
-        <li>
-          <a href="/">Login</a>
-        </li>
+        <a href="/">
+          <button className="header-button-login float-right">
+            <i className="fas fa-sign-in-alt fa-2x" />
+          </button>
+        </a>
       );
     } else {
       return [
-        // console.log(username),
-        <button key="1" onClick={() => this.handleLogout()}>
-          {' '}
-          Logout{' '}
+        <button
+          className="header-button float-right sign-out-button"
+          key="1"
+          onClick={() => this.handleLogout()}
+        >
+          <i className="fas fa-sign-out-alt fa-2x" />
         </button>,
-        <div key="2" style={{ color: 'white' }}>
-          Welcome {username}
-        </div>
+        <button
+          id="close-filter-button"
+          className="header-button float-right hidden"
+          onClick={() => this.handleFilterClose()}
+        >
+          <i className="fa fa-times fa-2x" aria-hidden="true" />
+        </button>,
+        <button
+          id="filter-button"
+          className="header-button float-right filter-button"
+          onClick={() => this.handleFilter()}
+        >
+          <i className="fa fa-filter fa-2x" aria-hidden="true" />
+        </button>
       ];
     }
-  }
-
-  handleLogout() {
-    localStorage.removeItem('token');
-    window.location = '/';
   }
 
   render() {
@@ -50,10 +83,7 @@ class Header extends React.Component {
             <NavLink exact to="/dashboard" className="header-logo float-left">
               <h1 className="is-active-logo">iSpentWhat</h1>
             </NavLink>
-            <div className="float-right">
-              <NavLink to="/dashboard/create" activeClassName="is-active">
-                Add expense{' '}
-              </NavLink>
+            <div className="main-header-buttons">
               <span className="main-header-username">
                 {this.renderContent()}
               </span>

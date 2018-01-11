@@ -18,17 +18,20 @@
 @media only screen and (max-width: 420px) {
   .add-expense-wrapper {
     margin: 10px;
+    margin-top: 82px;
+    margin-bottom: 0px;
     border: 2px solid #4c9cf1;
-    max-height: 600px;
-    min-height: 600px;
+    max-height: 550px;
+    min-height: 85vh;
   }
   .cross-exit {
     display: block;
     position: fixed;
     right: 15px;
-    bottom: 56px;
+    bottom: 35px;
     height: 70px;
     z-index: 10;
     color: #cc3300;
+    background-color: none;
   }
 }

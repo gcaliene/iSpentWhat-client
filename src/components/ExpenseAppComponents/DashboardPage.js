@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import $ from 'jquery';
 
 import ExpenseList from './ExpenseList';
 import ExpenseFilters from './ExpenseFilters';

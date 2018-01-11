@@ -1,9 +1,16 @@
 header {
   background-color: #232323;
   text-align: center;
-  /* min-width: auto; */
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  min-height: 70px;
+  padding: 0px;
+  z-index: 1000;
+}
 
-  min-height: 80px;
+a {
+  background-color: #232323;
 }
 
 .header-logo {
@@ -19,6 +26,30 @@ header {
 
 .float-right {
   float: right;
+}
+
+.main-header-buttons {
+  padding-top: 5px;
+}
+
+.header-button {
+  background-color: #232323;
+  border: none;
+  color: #0099ff;
+  padding: 15px;
+}
+
+.header-button-login {
+  background-color: #232323;
+  border: none;
+  color: #0099ff;
+  padding: 15px 20px;
+}
+
+.header-username {
+  display: block;
+  padding-top: 70px;
+  text-align: center;
 }
 
 .is-active-logo {

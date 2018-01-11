@@ -96,8 +96,8 @@ class ExpenseForm extends React.Component {
             className="expense-form-amount"
             type="text"
             id="amount"
-            maxLength="14"
-            size="14"
+            maxLength="10"
+            size="12"
             value={this.state.amount}
             onChange={this.onAmountChange}
             placeholder="Amount (required)"
@@ -115,7 +115,7 @@ class ExpenseForm extends React.Component {
           />
           <br />
           <div className="input-label">
-            <br />Amount (USD)
+            <br />
           </div>
           <textarea
             className="expense-form-note"
@@ -123,14 +123,14 @@ class ExpenseForm extends React.Component {
             id="note"
             value={this.state.note}
             cols="30"
-            rows="9"
+            rows="7"
             placeholder="Add a note for you expense (optional). Max 200 characters."
             maxLength="200"
             onChange={this.onNoteChange}
           />
           <br />
-          <button className="input-button">
-            <i class="fas fa-check fa-4x" />
+          <button className=" ">
+            <i class="fas fa-check fa-4x input-button" />
           </button>
         </form>
       </div>

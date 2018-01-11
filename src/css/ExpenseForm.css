@@ -21,16 +21,22 @@
 }
 
 .input-button {
-  background-color: #1d1d1d;
+  background-color: none;
   border: none;
   color: #0099ff;
+}
+
+button {
+  background-color: #1d1d1d;
+  border: none;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 420px) {
   .input-button {
     position: fixed;
-    right: 290px;
-    bottom: 56px;
+    left: 35px;
+    bottom: 35px;
     height: 70px;
     z-index: 10;
   }

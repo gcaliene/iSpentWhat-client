@@ -1,2 +1,47 @@
+.hidden {
+  display: none;
+}
+
 .expense-filter-wrapper {
+  padding: 0px 0px 20px 0px; /* no padding on top*/
+  margin-top: 85px;
+}
+
+.expense-filter-date-label {
+  color: #4c9cf1;
+}
+
+.select-wrapper {
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+  height: 29px;
+  overflow: hidden;
+  width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-wrapper select {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  height: 29px;
+  padding: 5px; /* If you add too much padding here, the options won't show in IE */
+  width: 268px;
+}
+.semi-square {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.blue {
+  background-color: #4c9cf1;
+}
+.blue select {
+  color: #fff;
+}
+
+option {
+  background-color: #4c9cf1;
+  color: #fff;
 }

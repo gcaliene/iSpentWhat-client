@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import $ from 'jquery';
 
 import ExpenseForm from './ExpenseForm';
 import Header from '../Header';
@@ -22,7 +23,7 @@ const AddExpensePage = props => (
       />
     </div>
 
-    <NavLink exact to="/dashboard" className="header-logo float-left">
+    <NavLink id="exit-add-expense" exact to="/dashboard" className=" ">
       <h1 className="is-active-logo">
         <i className="fas fa-times fa-5x cross-exit" />
       </h1>

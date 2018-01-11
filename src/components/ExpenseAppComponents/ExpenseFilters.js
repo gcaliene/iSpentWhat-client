@@ -26,42 +26,58 @@ class ExpenseFilters extends React.Component {
   };
   render() {
     return (
-      <div className=" expense-filter-wrapper">
-        <input
-          type="text"
-          value={this.props.filters.text}
-          onChange={e => {
-            this.props.dispatch(setTextFilter(e.target.value));
-          }}
-        />
-        <select
-          value={this.props.filters.sortBy}
-          onChange={e => {
-            if (e.target.value === 'date') {
-              this.props.dispatch(sortByDate());
-            } else if (e.target.value === 'amount') {
-              this.props.dispatch(sortByAmount());
-            }
-          }}
-        >
-          <option value="date">Date</option>
-          <option value="amount">Amount</option>
-        </select>
-        <DateRangePicker
-          showDefaultInputIcon
-          startDate={this.props.filters.startDate}
-          endDate={this.props.filters.endDate}
-          onDatesChange={this.onDatesChange}
-          focusedInput={this.state.calendarFocused}
-          onFocusChange={this.onFocusChange}
-          showClearDates
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-          readOnly
-          reopenPickerOnClearDates
-          displayFormat="MMM D"
-          customArrowIcon=">"
-        />
+      <div id="filter" className="hidden">
+        <div className=" expense-filter-wrapper">
+          <input
+            className="expense-filter-title-label"
+            type="text"
+            value={this.props.filters.text}
+            onChange={e => {
+              this.props.dispatch(setTextFilter(e.target.value));
+            }}
+            placeholder="Filter by expense title..."
+          />
+          <br />
+          <br />
+          <span className="expense-filter-date-label">
+            Sort expenses by date or amount...
+          </span>{' '}
+          <br />
+          <div className="select-wrapper blue semi-square">
+            <select
+              value={this.props.filters.sortBy}
+              onChange={e => {
+                if (e.target.value === 'date') {
+                  this.props.dispatch(sortByDate());
+                } else if (e.target.value === 'amount') {
+                  this.props.dispatch(sortByAmount());
+                }
+              }}
+            >
+              <option value="date">Date</option>
+              <option value="amount">Amount</option>
+            </select>
+          </div>
+          <br />
+          <span className="expense-filter-date-label">
+            Show expenses from a range of dates.
+          </span>
+          <DateRangePicker
+            showDefaultInputIcon
+            startDate={this.props.filters.startDate}
+            endDate={this.props.filters.endDate}
+            onDatesChange={this.onDatesChange}
+            focusedInput={this.state.calendarFocused}
+            onFocusChange={this.onFocusChange}
+            showClearDates
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+            readOnly
+            reopenPickerOnClearDates
+            displayFormat="MMM D"
+            customArrowIcon=">"
+          />
+        </div>
       </div>
     );
   }
