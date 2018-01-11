@@ -38,15 +38,15 @@ class Header extends React.Component {
   }
 
   renderContent() {
-    const username = this.props.user.toString();
+    // const username = this.props.user.toString();
     // console.log(typeof this.props.user);
     if (typeof this.props.user !== 'string') {
       return (
-        <a href="/">
+        <NavLink exact to="/">
           <button className="header-button-login float-right">
             <i className="fas fa-sign-in-alt fa-2x" />
           </button>
-        </a>
+        </NavLink>
       );
     } else {
       return [

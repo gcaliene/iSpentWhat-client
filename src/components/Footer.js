@@ -3,8 +3,8 @@ import React from 'react';
 import '../css/Footer.css';
 
 export const Footer = () => (
-  <a href="#" className="footer">
+  <div className="footer" onClick={() => window.scrollTo(0, 0)}>
     <p>Back To The Top</p>
     <p>2018</p>
-  </a>
+  </div>
 );

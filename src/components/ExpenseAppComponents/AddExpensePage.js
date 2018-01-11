@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import ExpenseForm from './ExpenseForm';
 import Header from '../Header';

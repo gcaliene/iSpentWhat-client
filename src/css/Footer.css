@@ -5,7 +5,6 @@
   left: 0;
   margin-top: 0;
   padding: 0px;
-  background-color: white;
   text-align: center;
   color: white;
   line-height: 0.5;
@@ -16,6 +15,5 @@
 @media only screen and (max-width: 420px) {
   .footer {
     position: relative;
-    background-color: white;
   }
 }
