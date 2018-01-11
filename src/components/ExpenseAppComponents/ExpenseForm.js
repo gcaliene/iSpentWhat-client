@@ -4,11 +4,8 @@ import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import { connect } from 'react-redux';
-// import $ from 'jquery';
 
-// const date = new Date(); this sucks
-// const now = moment();
-// console.log(now.format('MMM Do, YYYY'));
+import '../../css/ExpenseForm.css';
 
 class ExpenseForm extends React.Component {
   //this state is only temporary because it will only be there until user submits form and sends it to redux
@@ -29,16 +26,6 @@ class ExpenseForm extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.getUserName();
-  // }
-  //
-  // getUserName = () => {
-  //   const username = this.props.user.toString();
-  //   console.log(typeof username);
-  //   console.log(this);
-  // };
-
   onDescriptionChange = e => {
     const description = e.target.value;
     this.setState(() => ({ description })); // or use description:description
@@ -51,7 +38,9 @@ class ExpenseForm extends React.Component {
 
   onAmountChange = e => {
     const amount = e.target.value;
-    this.setState(() => ({ amount }));
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ amount }));
+    }
   };
 
   onDateChange = createdAt => {
@@ -78,46 +67,51 @@ class ExpenseForm extends React.Component {
         note: this.state.note,
         user: this.props.user
       });
-      // console.log(this);
     }
   };
 
   render() {
     return (
-      <div>
+      <div className="expense-form-wrapper">
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <input
+            className="expense-form-description"
             type="text"
             id="description"
-            placeholder="Description"
+            placeholder="Brief description, please."
             autoFocus
+            maxLength="45"
             value={this.state.description}
             onChange={this.onDescriptionChange}
           />
           <input
+            className="expense-form-amount"
             type="text"
             id="amount"
+            maxLength="14"
             value={this.state.amount}
             onChange={this.onAmountChange}
             placeholder="Amount"
           />
           <SingleDatePicker
             id="createdAt"
-            date={this.state.createdAt} // momentPropTypes.momentObj or null
-            onDateChange={this.onDateChange} // PropTypes.func.isRequired
-            focused={this.state.calendarFocused} // PropTypes.bool
-            onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
+            date={this.state.createdAt}
+            onDateChange={this.onDateChange}
+            focused={this.state.calendarFocused}
+            onFocusChange={this.onFocusChange}
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
           <textarea
+            className="expense-form-note"
             name=""
             id="note"
             value={this.state.note}
             cols="30"
             rows="10"
-            placeholder="Add a note for you expense (optional)"
+            placeholder="Add a note for you expense (optional). Max 200 characters."
+            maxLength="200"
             onChange={this.onNoteChange}
           />
           <button>Add Expense</button>
@@ -128,8 +122,8 @@ class ExpenseForm extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.user.user);
-  console.log(typeof state.user.user);
+  // console.log(state.user.user);
+  // console.log(typeof state.user.user);
   const user = state.user.user;
 
   return {

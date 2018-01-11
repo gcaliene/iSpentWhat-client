@@ -13,7 +13,7 @@ const AddExpensePage = props => (
   <div>
     <Header />
     <div className="container add-expense-wrapper">
-      <h1>Add Expense</h1>
+      <h1 className="add-expense-title">Add Expense</h1>
       <ExpenseForm
         onSubmit={expense => {
           props.dispatch(addExpenseToBackend(expense));
@@ -24,7 +24,7 @@ const AddExpensePage = props => (
 
     <NavLink exact to="/dashboard" className="header-logo float-left">
       <h1 className="is-active-logo">
-        <i class="fas fa-times fa-5x cross-exit" />
+        <i className="fas fa-times fa-5x cross-exit" />
       </h1>
     </NavLink>
   </div>

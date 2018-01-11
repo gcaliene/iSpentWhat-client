@@ -8,7 +8,6 @@
   padding-bottom: 1%;
   margin-bottom: 3%;
   position: relative;
-  /* border: solid 2px white; */
 }
 
 .expense-item {
@@ -29,16 +28,22 @@
   color: #33ccff;
 }
 
-/* .expense-item-wrapper:lastchild {
-  margin-bottom: 3%;
-} */
-
 .expense-item-list:last-child {
   padding-bottom: 15px;
 }
 
 .expense-item-amount {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.23rem;
   color: #9e2404;
+}
+
+.expense-item-date {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.expense-item-note {
+  padding-right: 35px;
+  padding-left: 35px;
 }

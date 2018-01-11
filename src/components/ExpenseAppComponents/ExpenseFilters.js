@@ -11,22 +11,7 @@ import {
   setEndDate
 } from '../../actions/filter';
 
-// import 'react-dates/lib/css/_datepicker.css';
-
-// this worked import ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
-// import aphroditeInterface from 'react-with-styles-interface-aphrodite';
-// import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-
-// ThemedStyleSheet.registerInterface(aphroditeInterface);
-// ThemedStyleSheet.registerTheme(DefaultTheme);
-
-// import 'react-dates/lib/css/_datepicker.css';
-// import ThemedStyleSheet from 'react-with-styles/lib/ThemedStyleSheet';
-// import aphroditeInterface from 'react-with-styles-interface-aphrodite';
-// import DefaultTheme from 'react-dates/lib/theme/DefaultTheme';
-
-// ThemedStyleSheet.registerInterface(aphroditeInterface);
-// ThemedStyleSheet.registerTheme(DefaultTheme);
+import '../../css/ExpenseFilters.css';
 
 class ExpenseFilters extends React.Component {
   state = {
@@ -41,7 +26,7 @@ class ExpenseFilters extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className=" expense-filter-wrapper">
         <input
           type="text"
           value={this.props.filters.text}

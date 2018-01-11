@@ -1,0 +1,9 @@
+.expense-list-title {
+  color: #1d1d1d;
+}
+
+@media only screen and (max-width: 420px) {
+  .expense-list-title {
+    color: white;
+  }
+}

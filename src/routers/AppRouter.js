@@ -8,7 +8,7 @@ import FrontPage from '../components/FrontPage';
 import DashboardPage from '../components/ExpenseAppComponents/DashboardPage';
 import AddExpensePage from '../components/ExpenseAppComponents/AddExpensePage';
 import EditExpensePage from '../components/ExpenseAppComponents/EditExpensePage';
-import { Footer } from '../components/Footer';
+// import { Footer } from '../components/Footer';
 
 class AppRouter extends React.Component {
   componentDidMount() {

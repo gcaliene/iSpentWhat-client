@@ -4,6 +4,8 @@ import ExpenseItem from './ExpenseItem';
 import selectExpenses from '../../reducers/selector';
 import { fetchExpenses } from '../../actions/action';
 
+import '../../css/ExpenseList.css';
+
 export class ExpenseList extends React.Component {
   // componentDidUpdate() {
   //   this.props.dispatch(fetchExpenses());
@@ -21,7 +23,7 @@ export class ExpenseList extends React.Component {
   render() {
     return (
       <div>
-        <h1>Expense List</h1>
+        <h1 className="expense-list-title">Expense List</h1>
         {this.props.expenses.map(expense => {
           return <ExpenseItem key={expense._id} {...expense} />;
         })}

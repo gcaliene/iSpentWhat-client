@@ -27,12 +27,14 @@ const ExpenseItem = ({
             <div className="expense-item_note-amount-createdat">
               <div className="">
                 <p>
-                  <span className="expense-item-amount">${amount / 100}</span>
+                  <span className="expense-item-amount">$ {amount / 100}</span>
                 </p>
                 <br />
-                <div>{note}</div>
+                <div className="expense-item-note">{note}</div>
                 <br />
-                <div>{moment(createdAt).format('MMM Do YY')}</div>
+                <div className="expense-item-date">
+                  {moment(createdAt).format('MMM Do, YYYY')}
+                </div>
               </div>
             </div>
           </div>

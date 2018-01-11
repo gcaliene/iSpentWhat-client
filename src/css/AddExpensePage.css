@@ -11,6 +11,10 @@
   display: none;
 }
 
+.add-expense-title {
+  color: #4c9cf1;
+}
+
 @media only screen and (max-width: 420px) {
   .add-expense-wrapper {
     margin: 10px;
@@ -21,7 +25,7 @@
   .cross-exit {
     display: block;
     position: fixed;
-    right: 20px;
+    right: 15px;
     bottom: 56px;
     height: 70px;
     z-index: 10;
