@@ -6,13 +6,8 @@ import '../css/container.css';
 import '../css/FrontPage.css';
 
 class FrontPage extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-  }
   componentWillMount() {
     const authToken = localStorage.getItem('token');
-    console.log(typeof authToken);
     if (typeof authToken === 'string') {
       window.location = '/dashboard';
     }

@@ -13,10 +13,6 @@ import '../../css/Footer.css';
 class DashboardPage extends React.Component {
   componentWillMount() {
     const token = localStorage.getItem('token');
-    const tokenType = typeof token;
-    console.log(typeof token);
-    console.log(tokenType);
-    console.log(this.props);
     if (typeof token !== 'string') {
       window.location = '/';
     }
@@ -41,7 +37,6 @@ class DashboardPage extends React.Component {
 }
 // implicitly returning so no curlies need
 const mapStateToProps = state => {
-  console.log(state);
   return {
     user: state.user.user
   };

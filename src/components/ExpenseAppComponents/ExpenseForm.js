@@ -11,11 +11,6 @@ class ExpenseForm extends React.Component {
   //this state is only temporary because it will only be there until user submits form and sends it to redux
   constructor(props) {
     super(props);
-    // console.log(props);
-
-    // console.log(username);
-    //we have to make sure that the page still works if there is an expense or not
-    //thisis why we have to bring in the props
     this.state = {
       description: props.expense ? props.expense.description : '',
       note: props.expense ? props.expense.note : '',
@@ -130,7 +125,7 @@ class ExpenseForm extends React.Component {
           />
           <br />
           <button className=" ">
-            <i class="fas fa-check fa-4x input-button" />
+            <i className="fas fa-check fa-4x input-button" />
           </button>
         </form>
       </div>

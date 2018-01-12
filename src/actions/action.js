@@ -1,5 +1,6 @@
 //import uuid from 'uuid';
 import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utils';
 
 //////USER REGISTRATION AND LOGIN//////////////
 const registerUserSuccess = user => ({
@@ -21,9 +22,24 @@ export const registerUser = (username, password) => {
       },
       body: JSON.stringify({ username, password })
     })
-      .then(response => response.json())
-      .then(json => dispatch(registerUserSuccess(json)))
-      .catch(e => console.log(e));
+      .then(res => normalizeResponseErrors(res))
+      .then(res => {
+        res.json();
+      })
+      .then(json => {
+        dispatch(registerUserSuccess(json));
+      })
+      .then(() => {
+        alert('You are now registered, please login with your details.');
+        window.location = '/';
+      })
+      .catch(error => {
+        return alert(
+          `Code: ${error.code} at '${error.location}' saying: ${
+            error.message
+          }  `
+        );
+      });
   };
 };
 
@@ -37,11 +53,19 @@ export const protectedEnpointTesting = () => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${authToken}`
       }
-      // body: JSON.stringify({ username, password })
     })
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(e => console.log(e));
+      .then(res => normalizeResponseErrors(res))
+      .then(response => {
+        response.json();
+      })
+      // .then(json => console.log(json))
+      .catch(error => {
+        return alert(
+          `Code: ${error.code} at '${error.location}' saying: ${
+            error.message
+          }  `
+        );
+      });
   };
 };
 
@@ -54,10 +78,11 @@ export const loginUser = (username, password) => {
       },
       body: JSON.stringify({ username, password })
     })
+      .then(res => normalizeResponseErrors(res))
       .then(response => response.json())
       .then(json => {
         const { authToken } = json;
-        console.log(authToken);
+        // console.log(authToken);
         localStorage.setItem('token', authToken);
         dispatch(loginUserSuccess(authToken));
         window.location = '/dashboard';
@@ -65,7 +90,6 @@ export const loginUser = (username, password) => {
       .catch(e => {
         console.log(e);
         alert('Please Check Your Username and Password');
-        return (window.location = '/');
       });
   };
 };
@@ -88,14 +112,15 @@ export const getCurrentUser = () => {
       .then(res => res.json())
       .then(username => {
         dispatch(fetchCurrentUserSuccess(username));
-        console.log(process.env);
       })
-      .catch(e => console.log(e));
+      .catch(e => {
+        console.log('No user logged in.');
+      });
   };
 };
 
 ////////////////////EXPENSES///////////////////
-//////////////////////////// ADD_EXPENSE //////////////////action generator///////////////////////////
+//////////////////////////// FETCH_EXPENSES & ADD_EXPENSE //////////////////action generator///////////////////////////
 
 export const FETCH_EXPENSES_SUCCESS = 'FETCH_EXPENSES_SUCCESS';
 export const fetchExpensesSuccess = expenses => ({
@@ -120,11 +145,8 @@ export const fetchExpenses = () => dispatch => {
     })
     .then(data => {
       dispatch(fetchExpensesSuccess(data.expenses));
-    });
-
-  // .catch(err => {
-  //     dispatch(fetchBoardError(err));
-  // });
+    })
+    .catch(e => console.log(e));
 };
 
 export const addExpenseToBackend = expense => dispatch => {
@@ -137,13 +159,10 @@ export const addExpenseToBackend = expense => dispatch => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(expense)
-  }).then(response => console.log(response));
-  // .then(response => response.json())
-  // .then(expenses => dispatch(fetchExpensesSuccess(expenses)));
+  })
+    .then(response => console.log(response))
+    .catch(e => console.log(e));
 };
-
-/////////////ERROR////////////
-//
 
 //////////////////action generator///////////////////////////
 //////////////////////////REMOVE_EXPENSE//////////////////////////////
@@ -157,7 +176,9 @@ export const deleteExpenseFromBackend = _id => dispatch => {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`
     }
-  }).then(() => dispatch(fetchExpenses()));
+  })
+    .then(() => dispatch(fetchExpenses()))
+    .catch(e => console.log(e));
 };
 
 //////////////////action generator///////////////////////////
@@ -179,9 +200,7 @@ export const editExpenseToBackend = (_id, updates) => dispatch => {
       Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(updates)
-  }).then(() => dispatch(fetchExpenses()));
+  })
+    .then(() => dispatch(fetchExpenses()))
+    .catch(e => console.log(e));
 };
-// });
-// };
-// });
-// };

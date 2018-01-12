@@ -25,7 +25,7 @@ const AddExpensePage = props => (
 
     <NavLink id="exit-add-expense" exact to="/dashboard" className=" ">
       <h1 className="is-active-logo">
-        <i className="fas fa-times fa-5x cross-exit" />
+        <i className="fas fa-times fa-3x cross-exit" />
       </h1>
     </NavLink>
   </div>
