@@ -58,7 +58,6 @@ export const protectedEnpointTesting = () => {
       .then(response => {
         response.json();
       })
-      // .then(json => console.log(json))
       .catch(error => {
         return alert(
           `Code: ${error.code} at '${error.location}' saying: ${
