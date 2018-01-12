@@ -15,7 +15,7 @@ import '../../css/ExpenseFilters.css';
 
 class ExpenseFilters extends React.Component {
   state = {
-    calendarFocused: false
+    calendarFocused: false //the error is comming from having this false
   };
   onDatesChange = ({ startDate, endDate }) => {
     this.props.dispatch(setStartDate(startDate));
@@ -68,7 +68,7 @@ class ExpenseFilters extends React.Component {
             startDate={this.props.filters.startDate}
             endDate={this.props.filters.endDate}
             onDatesChange={this.onDatesChange}
-            focusedInput={this.state.calendarFocused || true}
+            focusedInput={this.state.calendarFocused}
             onFocusChange={this.onFocusChange}
             showClearDates
             numberOfMonths={1}
