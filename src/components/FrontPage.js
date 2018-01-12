@@ -1,4 +1,6 @@
 import React from 'react';
+import $ from 'jquery';
+
 import FormRegister from './FormRegister';
 import Header from './Header';
 import { Footer } from './FrontPageFooter';
@@ -11,6 +13,13 @@ class FrontPage extends React.Component {
     if (typeof authToken === 'string') {
       window.location = '/dashboard';
     }
+  }
+
+  handleLoginRegister() {
+    $('#id-front-page-register-login-button').addClass('hidden');
+    $('#FrontPage-FromRegister').removeClass('hidden');
+    $('#123').removeClass('hidden');
+    $('#header-Register-Login-button').addClass('hidden');
   }
 
   render() {
@@ -36,6 +45,15 @@ class FrontPage extends React.Component {
               <span className="icon">
                 <i className="far fa-credit-card" />
               </span>
+            </div>
+            <div className="front-page-registration-login-container">
+              <button
+                id="id-front-page-register-login-button"
+                className="front-page-registration-login-button"
+                onClick={() => this.handleLoginRegister()}
+              >
+                Register/Login
+              </button>
             </div>
           </div>
           <br />

@@ -1,6 +1,7 @@
 //import uuid from 'uuid';
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
+import $ from 'jquery';
 
 //////USER REGISTRATION AND LOGIN//////////////
 const registerUserSuccess = user => ({
@@ -30,15 +31,39 @@ export const registerUser = (username, password) => {
         dispatch(registerUserSuccess(json));
       })
       .then(() => {
-        alert('You are now registered, please login with your details.');
-        window.location = '/';
+        $('#error-username-login').html('');
+        $('#error-password-registration').html('');
+        $('#error-username-registration').html('');
+        $('#input-registration-username').val('');
+        $('#input-registration-password').val('');
+        $('#error-username-login').removeClass(
+          'class-error-username-registration'
+        );
+        $('#error-username-login').addClass('class-success-username-login');
+        $('#error-username-login').removeClass('hidden');
+        $('#error-username-login').append(
+          `Registration Success! Please Login Below.`
+        );
       })
       .catch(error => {
-        return alert(
-          `Code: ${error.code} at '${error.location}' saying: ${
-            error.message
-          }  `
-        );
+        console.log(error.location);
+        if (error.location === 'password') {
+          $('#error-username-login').html('');
+          $('#error-password-registration').html('');
+          $('#error-username-registration').html('');
+          $('#error-password-registration').removeClass('hidden');
+          $('#error-password-registration').append(
+            `${error.location.toUpperCase()}: ${error.message}`
+          );
+        } else {
+          $('#error-username-login').html('');
+          $('#error-password-registration').html('');
+          $('#error-username-registration').html('');
+          $('#error-username-registration').removeClass('hidden');
+          $('#error-username-registration').append(
+            `${error.location.toUpperCase()}: ${error.message}`
+          );
+        }
       });
   };
 };
@@ -59,10 +84,11 @@ export const protectedEnpointTesting = () => {
         response.json();
       })
       .catch(error => {
-        return alert(
-          `Code: ${error.code} at '${error.location}' saying: ${
-            error.message
-          }  `
+        $('#error-username-login').html('');
+        $('#error-username-login').html('');
+        $('#error-username-login').removeClass('hidden');
+        $('#error-username-login').append(
+          `${error.location.toUpperCase()}: ${error.message}`
         );
       });
   };
@@ -86,9 +112,19 @@ export const loginUser = (username, password) => {
         dispatch(loginUserSuccess(authToken));
         window.location = '/dashboard';
       })
-      .catch(e => {
-        console.log(e);
-        alert('Please Check Your Username and Password');
+      .catch(error => {
+        console.log(error);
+        $('#error-password-registration').html('');
+        $('#error-username-registration').html('');
+        $('#error-username-login').html('');
+        $('#error-username-login').removeClass('hidden');
+        $('#error-username-login').removeClass('class-success-username-login');
+        $('#error-username-login').addClass(
+          'class-error-username-registration'
+        );
+        $('#error-username-login').append(
+          `Please Check Your Username and Password`
+        );
       });
   };
 };

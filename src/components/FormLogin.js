@@ -10,7 +10,6 @@ class FormLogin extends Component {
     // console.log('d');
     const username = event.target.username.value;
     const password = event.target.password.value;
-    console.log(this.props);
     this.props.dispatch(loginUser(username, password));
   }
 
@@ -20,6 +19,11 @@ class FormLogin extends Component {
         onSubmit={e => this.handleSubmit(e)}
         className="FormRegister-container-form"
       >
+        <br />
+        <p
+          id="error-username-login"
+          className=" class-success-username-login hidden"
+        />
         <input type="text" name="username" placeholder="username" required />
         <br />
         <input

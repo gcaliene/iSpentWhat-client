@@ -38,50 +38,19 @@ class Header extends React.Component {
   }
 
   handleLoginRegister() {
+    $('#id-front-page-register-login-button').addClass('hidden');
+
     $('#FrontPage-FromRegister').removeClass('hidden');
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
   }
   handleLoginRegisterClose() {
+    $('#id-front-page-register-login-button').removeClass('hidden');
+
     $('#FrontPage-FromRegister').addClass('hidden');
     $('#123').addClass('hidden');
     $('#header-Register-Login-button').removeClass('hidden');
   }
-
-  //
-  // handlePathToAddExpensePage() {
-  //   $('#add-expense-button').on('click', function() {
-  //     $('#add-expense-button').addClass('hidden');
-  //     $('#close-add-expense-component-button').removeClass('hidden');
-  //   });
-  // }
-
-  // handlePathBackFromAddExpensePage() {
-  //   $('#close-add-expense-component-button').on('click', function() {
-  //     $('#close-add-expense-component-button').addClass('hidden');
-  //     $('#add-expense-button').removeClass('hidden');
-  //   });
-  // }
-  //
-  // <button
-  //   id="add-expense-button"
-  //   className="header-button float-right "
-  //   onClick={() => this.handlePathToAddExpensePage()}
-  // >
-  //   {' '}
-  //   <NavLink to="/dashboard/create" activeClassName="is-active">
-  //     <i class="fas fa-plus fa-2x" />{' '}
-  //   </NavLink>
-  // </button>,
-  // <button
-  //   id="close-add-expense-component-button"
-  //   className="header-button float-right hidden"
-  //   onClick={() => this.handlePathBackFromAddExpensePage()}
-  // >
-  //   <NavLink to="/dashboard/" activeClassName="is-active">
-  //     <i class="fas fa-times fa-2x" />
-  //   </NavLink>
-  // </button>,
 
   renderContent() {
     // const username = this.props.user.toString();

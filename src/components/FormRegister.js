@@ -18,7 +18,6 @@ class FormRegister extends React.Component {
     // console.log('d');
     const username = event.target.username.value;
     const password = event.target.password.value;
-    console.log(username, password);
     this.props.dispatch(registerUser(username, password));
   }
 
@@ -31,17 +30,29 @@ class FormRegister extends React.Component {
               onSubmit={e => this.handleSubmit(e)}
               className="FormRegister-container-form"
             >
-              <input
-                type="text"
-                name="username"
-                placeholder="username"
-                required
+              <br />
+              <p
+                id="error-username-registration"
+                className="class-error-username-registration hidden"
               />
               <br />
               <input
+                id="input-registration-username"
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+              />
+              <br />
+              <p
+                id="error-password-registration"
+                className="class-error-password-registration hidden"
+              />
+              <input
+                id="input-registration-password"
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Password (min. 10 char)"
                 required
               />
               <br /> <br />
