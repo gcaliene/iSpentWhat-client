@@ -8,14 +8,11 @@ import "../css/container.css";
 
 class FormRegister extends React.Component {
 	componentDidMount() {
-		// console.log('Registration form ready');
 		const authToken = localStorage.getItem("token");
-		// console.log(authToken);
 		this.props.dispatch(loginUserSuccess(authToken));
 	}
 	handleSubmit(event) {
 		event.preventDefault();
-		// console.log('d');
 		const username = event.target.username.value;
 		const password = event.target.password.value;
 		this.props.dispatch(registerUser(username, password));
