@@ -191,7 +191,7 @@ export const addExpenseToBackend = expense => dispatch => {
 		},
 		body: JSON.stringify(expense)
 	})
-		.then(response => console.log(response))
+		.then(() => dispatch(fetchExpenses()))
 		.catch(e => console.log(e));
 };
 
