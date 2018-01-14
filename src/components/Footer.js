@@ -6,7 +6,7 @@ import "../css/Footer.css";
 
 class Footer extends React.Component {
 	componentDidUpdate() {
-		if ($(".expense-item-list").length == 0) {
+		if ($(".expense-item-list").length === 0) {
 			$("#id-footer-text").html("");
 			$("#id-footer-text").append(
 				"Click the <b>plus sign</b> on the <b>bottom right</b> to add an expense."
