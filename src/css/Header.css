@@ -7,10 +7,11 @@ header {
   min-height: 70px;
   padding: 0px;
   z-index: 1000;
+  overflow: auto;
 }
 
 a {
-  background-color: #232323;
+  /* background-color: #232323; */
 }
 
 .header-logo {
@@ -39,6 +40,12 @@ a {
   padding: 15px;
 }
 
+.header-button-text {
+  font-family: 'Nunito Sans', sans-serif;
+  /* font-size: 1rem; */
+  /* padding-bottom: 20px; */
+}
+
 .header-button-login {
   background-color: #232323;
   border: none;
@@ -46,18 +53,31 @@ a {
   padding: 15px 20px;
 }
 
-.header-username {
+/* .header-username {
   display: block;
   padding-top: 70px;
   text-align: center;
-}
+} */
 
 .is-active-logo {
   margin: 0;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 450px) {
   #add-expense-button {
     display: none;
+  }
+  .float-left {
+    float: none;
+    padding: 0px;
+  }
+
+  .float-right {
+    float: none;
+    padding: 0px;
+  }
+  .float-right:last-child {
+    float: none;
+    padding-left: 30px;
   }
 }

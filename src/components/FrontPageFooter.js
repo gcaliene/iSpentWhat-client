@@ -7,6 +7,6 @@ export const Footer = () => (
     className="footer footer-front-page"
     onClick={() => window.scrollTo(0, 0)}
   >
-    <p>2018</p>
+    <p>&copy; 2018</p>
   </div>
 );

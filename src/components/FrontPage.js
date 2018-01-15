@@ -1,9 +1,11 @@
 import React from 'react';
 import $ from 'jquery';
 
-import FormRegister from './FormRegister';
 import Header from './Header';
+import FormRegister from './FormRegister';
+import FormLogin from './FormLogin';
 import { Footer } from './FrontPageFooter';
+
 import '../css/container.css';
 import '../css/FrontPage.css';
 
@@ -63,6 +65,7 @@ class FrontPage extends React.Component {
           >
             <FormRegister />
           </div>
+          <FormLogin />
         </div>
         <Footer />
       </div>
