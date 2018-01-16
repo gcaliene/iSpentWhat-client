@@ -1,80 +1,90 @@
 .FormRegister-container {
-	/* background-color: blue; */
-	/* padding: 30px; */
-	/* max-width: 360px; */
-	margin-bottom: 55px;
-	/* width: 90vh; */
-	/* height: 100vh; */
-	margin-top: -40vh;
-	padding-top: 50vh;
-	/* padding-bottom: 10vh; */
-	/* margin-left: auto;
+  /* background-color: blue; */
+  /* padding: 30px; */
+  /* max-width: 360px; */
+  margin-bottom: 55px;
+  /* width: 90vh; */
+  /* height: 100vh; */
+  margin-top: -40vh;
+  padding-top: 35vh;
+  /* padding-bottom: 10vh; */
+  /* margin-left: auto;
   margin-right: auto; */
-	z-index: 1000000;
-	/* border: 2px solid white; */
+  z-index: 1000000;
+  /* border: 2px solid white; */
+}
+
+.register-form-signin-link {
+  color: white;
 }
 
 .FormRegister-container-border {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 300px;
-	padding-bottom: 20px;
-	border: 2px solid #0099ff;
-	background-color: #232323;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+  /* padding-bottom: 20px; */
+  border: 2px solid #0099ff;
+  background-color: #232323;
+}
+
+.register-form-title {
+  color: white;
+  margin-bottom: 0px;
+  font-size: 2rem;
 }
 
 input {
-	margin-bottom: 25px;
-	width: 75%;
+  margin-bottom: 25px;
+  width: 75%;
 }
 
 .class-error-password-registration input {
-	margin-top: 5px;
+  margin-top: 5px;
 }
 
 .FormRegister-container-form button {
-	background-color: #0099ff;
-	color: white;
-	border: 1px solid white; /* Green */
-	padding: 5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 5px;
-	margin-top: -6px;
+  background-color: #0099ff;
+  color: white;
+  border: 1px solid white; /* Green */
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  margin-top: -6px;
 }
 
 .class-error-password-registration {
-	/* line-height: 0px; */
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	color: red;
-	font-size: 0.8rem;
+  /* line-height: 0px; */
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: red;
+  font-size: 0.8rem;
 }
 
 .class-error-username-registration {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	color: red;
-	font-size: 0.8rem;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: red;
+  font-size: 0.8rem;
 }
 
 .class-error-username-login {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	color: red;
-	font-size: 0.8rem;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: red;
+  font-size: 0.8rem;
 }
 
 .class-success-username-login {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	color: #60dd77;
-	font-size: 0.8rem;
-	font-weight: 600;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: #60dd77;
+  font-size: 0.8rem;
+  font-weight: 600;
 }

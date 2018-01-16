@@ -17,7 +17,7 @@ class FrontPage extends React.Component {
     }
   }
 
-  handleLoginRegister() {
+  handleRegister() {
     $('#id-front-page-register-login-button').addClass('hidden');
     $('#FrontPage-FromRegister').removeClass('hidden');
     $('#123').removeClass('hidden');
@@ -52,9 +52,9 @@ class FrontPage extends React.Component {
               <button
                 id="id-front-page-register-login-button"
                 className="front-page-registration-login-button"
-                onClick={() => this.handleLoginRegister()}
+                onClick={() => this.handleRegister()}
               >
-                Register/Login
+                Register
               </button>
             </div>
           </div>
@@ -65,7 +65,9 @@ class FrontPage extends React.Component {
           >
             <FormRegister />
           </div>
-          <FormLogin />
+          <div id="FrontPage-FromLogin" className="hidden front-page-FormLogin">
+            <FormLogin />
+          </div>
         </div>
         <Footer />
       </div>

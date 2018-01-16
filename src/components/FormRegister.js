@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { registerUser, loginUserSuccess } from '../actions/action';
 import FormLogin from './FormLogin';
+import $ from 'jquery';
 
 import '../css/FormRegister.css';
 import '../css/container.css';
@@ -18,11 +19,21 @@ class FormRegister extends React.Component {
     this.props.dispatch(registerUser(username, password));
   }
 
+  handleLinkToSignIn() {
+    console.log('clicking the signin link');
+    $('#FrontPage-FromRegister').addClass('hidden');
+    $('#id-front-page-register-login-button').removeClass('hidden');
+    $('#FrontPage-FromLogin').removeClass('hidden');
+    $('#id-front-page-register-login-button').addClass('hidden');
+    $('#id-form-login-input-username').focus();
+  }
+
   render() {
     return (
       <div className="container">
         <div className="FormRegister-container">
           <div className="FormRegister-container-border">
+            <p className="register-form-title">Register</p>
             <form
               onSubmit={e => this.handleSubmit(e)}
               className="FormRegister-container-form"
@@ -54,6 +65,13 @@ class FormRegister extends React.Component {
               />
               <br /> <br />
               <button>Register</button>
+              <p
+                id=""
+                className="register-form-signin-link"
+                onClick={() => this.handleLinkToSignIn()}
+              >
+                Do you have an Account? Click here.
+              </p>
             </form>
             <br />
             <br />

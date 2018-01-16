@@ -78,6 +78,6 @@ a {
   }
   .float-right:last-child {
     float: none;
-    padding-left: 30px;
+    /* padding-left: 30px; */
   }
 }

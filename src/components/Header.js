@@ -34,22 +34,20 @@ class Header extends React.Component {
     });
   }
 
-  handleLoginRegister() {
+  handleLogin() {
     $('#id-front-page-register-login-button').addClass('hidden');
-
-    $('#FrontPage-FromRegister').removeClass('hidden');
+    $('#FrontPage-FromLogin').removeClass('hidden');
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
+    $('#id-form-login-input-username').focus();
   }
   handleLoginRegisterClose() {
     $('#id-front-page-register-login-button').removeClass('hidden');
-
+    $('#FrontPage-FromLogin').addClass('hidden');
     $('#FrontPage-FromRegister').addClass('hidden');
     $('#123').addClass('hidden');
     $('#header-Register-Login-button').removeClass('hidden');
   }
-
-  //
 
   renderContent() {
     if (typeof this.props.user !== 'string') {
@@ -66,7 +64,7 @@ class Header extends React.Component {
           key="234"
           id="header-Register-Login-button"
           className="header-button-login float-right"
-          onClick={() => this.handleLoginRegister()}
+          onClick={() => this.handleLogin()}
         >
           <i className="fas fa-sign-in-alt fa-2x">
             <span className="header-button-text"> Login</span>
