@@ -22,6 +22,8 @@ class FrontPage extends React.Component {
     $('#FrontPage-FromRegister').removeClass('hidden');
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
+    window.scrollTo(0, 1000);
+    $('#input-registration-username').focus();
   }
 
   render() {

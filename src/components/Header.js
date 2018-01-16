@@ -40,6 +40,7 @@ class Header extends React.Component {
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
     $('#id-form-login-input-username').focus();
+    window.scrollTo(0, 1000);
   }
   handleLoginRegisterClose() {
     $('#id-front-page-register-login-button').removeClass('hidden');
@@ -79,7 +80,7 @@ class Header extends React.Component {
           onClick={() => this.handleLogout()}
         >
           <i className="fas fa-sign-out-alt fa-2x">
-            <span className="header-button-text"> Logout</span>
+            <span className="header-button-text">Logout</span>
           </i>
         </button>,
 
@@ -98,8 +99,10 @@ class Header extends React.Component {
           className="header-button float-right filter-button"
           onClick={() => this.handleFilter()}
         >
+          <span>{'    '}</span>
+          <span>{'    '}</span>
           <i className="fa fa-filter fa-2x" aria-hidden="true">
-            <span className="header-button-text"> Filter</span>
+            <span className="header-button-text">Filter</span>
           </i>
         </button>
       ];

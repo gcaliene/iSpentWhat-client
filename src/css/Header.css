@@ -77,7 +77,16 @@ a {
     padding: 0px;
   }
   .float-right:last-child {
+    float: left;
+    padding-left: 30px;
+  }
+  #header-Register-Login-button {
     float: none;
-    /* padding-left: 30px; */
+    padding: 0px;
+  }
+
+  #close-filter-button {
+    float: left;
+    padding-left: 75px;
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { registerUser, loginUserSuccess } from '../actions/action';
-import FormLogin from './FormLogin';
 import $ from 'jquery';
 
 import '../css/FormRegister.css';
@@ -17,14 +16,21 @@ class FormRegister extends React.Component {
     const username = event.target.username.value;
     const password = event.target.password.value;
     this.props.dispatch(registerUser(username, password));
+    setTimeout(function() {
+      if (
+        $('#error-username-registration').text().length < 3 &&
+        $('#error-password-registration').text().length < 3
+      ) {
+        $('#FrontPage-FromRegister').addClass('hidden');
+        $('#FrontPage-FromLogin').removeClass('hidden');
+        $('#id-form-login-input-username').val(username);
+        $('#id-form-login-input-password').focus();
+      }
+    }, 500);
   }
-
   handleLinkToSignIn() {
-    console.log('clicking the signin link');
     $('#FrontPage-FromRegister').addClass('hidden');
-    $('#id-front-page-register-login-button').removeClass('hidden');
     $('#FrontPage-FromLogin').removeClass('hidden');
-    $('#id-front-page-register-login-button').addClass('hidden');
     $('#id-form-login-input-username').focus();
   }
 

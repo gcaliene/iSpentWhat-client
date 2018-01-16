@@ -19,10 +19,9 @@ class FormLogin extends Component {
     $('#id-front-page-register-login-button').addClass('hidden');
     $('#FrontPage-FromRegister').removeClass('hidden');
     $('#FrontPage-FromLogin').addClass('hidden');
-
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
-    $('#id-form-login-input-username').focus();
+    $('#input-registration-username').focus();
   }
 
   render() {
@@ -50,6 +49,7 @@ class FormLogin extends Component {
               />
               <br />
               <input
+                id="id-form-login-input-password"
                 type="password"
                 name="password"
                 placeholder="Password"
