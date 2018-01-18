@@ -1,8 +1,7 @@
 # iSpentChat-client
-The client for the ispentwhat-API backend:
-https://github.com/gcaliene/ispentwhat-api
+The client for the ispentwhat-API backend:  [__API__](https://github.com/gcaliene/ispentwhat-api)
 
-Access to the running app: __https://controller-boar-37807.netlify.com/__
+Access to the running app: [__iSpentWhat__](https://controller-boar-37807.netlify.com/)
 
 _A MERN-stack web application, built with a mobile-first layout in mind, that users can use to manage their one-off miscellaneous expenses and be able to filter through them quite easily. This is an alternative to many money-managers that require intrusive access to bank accounts and credit cards, as this app keeps it simple and unintrusive._
 
