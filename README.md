@@ -1,4 +1,27 @@
+# ispentwhat-client
+The client for the ispentwhat-API backend:
+https://github.com/gcaliene/ispentwhat-api
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+
+### Prerequisites
+The api is needed: https://github.com/gcaliene/ispentwhat-api
+After cloning proceed to start the api and start up a local mongo server. 
+Recommended to download the client: https://github.com/gcaliene/ispentwhat-client
+
+
+### Installing
+```
+npm install
+npm start
+```
+
+## Running the tests
+```
+npm test
+```
+
+
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
