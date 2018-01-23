@@ -21,7 +21,15 @@ class FormLogin extends Component {
     $('#FrontPage-FromLogin').addClass('hidden');
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
+    $('#js-demo-user-container').addClass('hidden');
+    $('#js-login-button-demo').removeClass('hidden');
+
     $('#input-registration-username').focus();
+  }
+
+  handleLinkToUseDemoAccountFromLogin() {
+    $('#js-demo-user-container').removeClass('hidden');
+    $('#js-login-button-demo').addClass('hidden');
   }
 
   render() {
@@ -30,6 +38,11 @@ class FormLogin extends Component {
         <div className="FormLogin-container">
           <div className="FormLogin-container-border">
             <p className="login-form-title">Login</p>
+            <div id="js-demo-user-container" class="demo-user-container hidden">
+              <h3 class="demo-user-title">Demo user</h3>
+              <p>Username: test123</p>
+              <p>Password: 1234567890</p>
+            </div>
             <form
               onSubmit={e => this.handleSubmit(e)}
               className="FormRegister-container-form"
@@ -63,6 +76,13 @@ class FormLogin extends Component {
                 onClick={() => this.handleLinkToRegister()}
               >
                 New User? Click here.
+              </p>
+              <p
+                id="js-login-button-demo"
+                onClick={() => this.handleLinkToUseDemoAccountFromLogin()}
+                className="register-form-signin-link"
+              >
+                Want to demo the app? Click here.
               </p>
             </form>
           </div>

@@ -31,7 +31,17 @@ class FormRegister extends React.Component {
   handleLinkToSignIn() {
     $('#FrontPage-FromRegister').addClass('hidden');
     $('#FrontPage-FromLogin').removeClass('hidden');
+    $('#js-demo-user-container').addClass('hidden');
+    $('#js-login-button-demo').removeClass('hidden');
+
     $('#id-form-login-input-username').focus();
+  }
+
+  handleLinkToUseDemoAccount() {
+    $('#FrontPage-FromRegister').addClass('hidden');
+    $('#FrontPage-FromLogin').removeClass('hidden');
+    $('#js-demo-user-container').removeClass('hidden');
+    $('#js-login-button-demo').addClass('hidden');
   }
 
   render() {
@@ -77,6 +87,12 @@ class FormRegister extends React.Component {
                 onClick={() => this.handleLinkToSignIn()}
               >
                 Do you have an Account? Click here.
+              </p>
+              <p
+                onClick={() => this.handleLinkToUseDemoAccount()}
+                className="register-form-signin-link"
+              >
+                Want to demo the app? Click here.
               </p>
             </form>
             <br />
