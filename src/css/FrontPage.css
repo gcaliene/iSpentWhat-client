@@ -3,10 +3,52 @@
   font-size: 2.23rem;
   padding-left: 80px;
   padding-right: 80px;
-  margin-top: 25vh;
   color: white;
+  /* background-color: red; */
+  z-index: 10;
 }
-.front-page-content-text {
+.front-page-content {
+  margin-top: 92px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  height: 600px;
+  /* filter: grayscale(100%); */
+}
+.front-page-content-open-form {
+  margin-top: 92px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  height: 600px;
+  /* filter: grayscale(100%); */
+}
+
+/* .front-page-FormRegister {
+  display: block;
+  z-index: 1000;
+} */
+
+.img-layer {
+  z-index: -20;
+  background-image: url('./images/wallstreet.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  position: absolute;
+}
+
+.opacity-layer {
+  z-index: -10;
+  opacity: 0.8;
+  background-color: black;
+  width: 100%;
+  height: 800px;
+  position: absolute;
 }
 
 .icon-container {
@@ -49,12 +91,28 @@
     /* padding-left: 5px;
     padding-right: 5px; */
   }
+
+  .front-page-content {
+    /* margin-top: 52px; */
+    height: 94vh;
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+
+  .front-page-content-open-form {
+    /* margin-top: 52px; */
+    height: 94vh;
+    padding-top: 10px;
+    padding-bottom: 173px;
+  }
+
   .front-page-content-text {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 2rem;
     padding-left: 80px;
     padding-right: 80px;
-    margin-top: 20vh;
+    /* margin-top: 20vh; */
+    /* height: 100vh; */
     color: white;
   }
   .front-page-registration-login-container button {

@@ -8,10 +8,17 @@
   text-align: center;
   color: white;
   /* line-height: 0.5; */
+  /* background-color: #0f0f0f; */
+  height: 10px;
+}
+
+.footer p {
+  margin: 0;
+  margin-top: 5px;
 }
 
 .footer-front-page {
-  position: fixed;
+  /* position: fixed; */
   /* right: 15px; */
   bottom: 0px;
   height: 40px;

@@ -35,19 +35,24 @@ class Header extends React.Component {
   }
 
   handleLogin() {
+    $('#js-front-page-content').removeClass('front-page-content');
+    $('#js-front-page-content').addClass('front-page-content-open-form');
     $('#id-front-page-register-login-button').addClass('hidden');
     $('#FrontPage-FromLogin').removeClass('hidden');
     $('#123').removeClass('hidden');
     $('#header-Register-Login-button').addClass('hidden');
     $('#id-form-login-input-username').focus();
-    window.scrollTo(0, 1000);
+    window.scrollTo(0, 310);
   }
   handleLoginRegisterClose() {
+    $('#js-front-page-content').removeClass('front-page-content-open-form');
+    $('#js-front-page-content').addClass('front-page-content');
     $('#id-front-page-register-login-button').removeClass('hidden');
     $('#FrontPage-FromLogin').addClass('hidden');
     $('#FrontPage-FromRegister').addClass('hidden');
     $('#123').addClass('hidden');
     $('#header-Register-Login-button').removeClass('hidden');
+    window.scrollTo(0, 0);
   }
 
   renderContent() {
