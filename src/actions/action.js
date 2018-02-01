@@ -201,7 +201,10 @@ export const fetchBudget = () => dispatch => {
       return res.json();
     })
     .then(data => {
-      // console.log(data.budget[0]);
+      console.log('from getbudget action');
+      console.log(data.budget[0]);
+      console.log('from getbudget action');
+
       dispatch(fetchBudgetSuccess(data.budget));
     })
     .catch(e => console.log('No amount for budget found.'));
@@ -254,7 +257,6 @@ export const deleteExpenseFromBackend = _id => dispatch => {
 
 export const deleteBudget = () => dispatch => {
   const authToken = localStorage.getItem('token');
-
   fetch(`${API_BASE_URL}/api/budget`, {
     method: 'delete',
     headers: {
@@ -262,7 +264,10 @@ export const deleteBudget = () => dispatch => {
       Authorization: `Bearer ${authToken}`
     }
   })
-    .then(() => dispatch(fetchBudget()))
+    .then(() => {
+      console.log('deleted budget');
+      dispatch(fetchBudgetSuccess());
+    })
     .catch(e => console.log(e));
 };
 
