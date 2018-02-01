@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import moment from 'moment';
 import $ from 'jquery';
 
 import { fetchBudget } from '../../actions/action';
-// import { deleteBudget } from '../../actions/action';
 
 import '../../css/BudgetAmount.css';
 
@@ -15,7 +13,6 @@ class BudgetAmount extends React.Component {
     console.log(this.state);
     console.log(props);
     this.state = {
-      // amount: props.budget ? (props.budget.amount / 100).toString() : ''
       budget: ''
     };
     this.handleClick = this.handleClick.bind(this);
@@ -24,13 +21,7 @@ class BudgetAmount extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchBudget());
     console.log(this.props);
-    // this.setState({ budget: this.props.budget || this.state.budget });
   }
-
-  // componentDidUpdate() {
-  //   // this.setState({ budget: this.state.budget || this.props.budget });
-  //   this.props.dispatch(fetchBudget());
-  // }
 
   onAmountChange = e => {
     const budget = e.target.value;
@@ -40,29 +31,18 @@ class BudgetAmount extends React.Component {
   };
 
   handleClick(e) {
-    // this.setState(() => {
-    //   budget: '';
-    // });
     this.props.handleClick({ budget: '' });
-    $('#js-budget-amount-input').val(0);
-    // window.location = '/dashboard';
-    // console.log(e.target.value);
-    // // const budget = this.state.budget;
-    // console.log(this.state);
-    // this.setState({ budget: '' });
-    // console.log(this.state);
+    this.setState({ budget: '' });
   }
 
   onSubmit = e => {
     e.preventDefault();
-    // this.setState(() => ({ error: '' })); //an empty string does not exist, therefore false
     console.log(this.state.budget);
     console.log(typeof this.props.budget);
     console.log(typeof this.state.budget);
     this.setState({ budget: this.state.budget });
     this.props.onSubmit({
       amount: parseFloat(this.state.budget, 10), //we are multiplying by 100 to wrok with pennies
-      // createdAt: this.state.createdAt.valueOf(),
       user: this.props.user
     });
   };
@@ -94,7 +74,11 @@ class BudgetAmount extends React.Component {
     } else {
       firstTimeBudget = (
         <div>
-          <p>Any expense you now add will deduct from the budget above.</p>
+          <p className="budget_p">
+            Any expense you now add will deduct from the budget above. <br />
+            <br /> Starting Budget:<br />
+            <span className="green-text"> $ {this.props.budget}</span>
+          </p>
           <button
             className="budget-button budget-delete-button"
             onClick={this.handleClick}
@@ -105,7 +89,6 @@ class BudgetAmount extends React.Component {
       );
     }
 
-    // let budgetMinusExpenses = this.props.budget;
     let budgetMinusExpenses = this.state.budget || this.props.budget;
 
     for (let i = 0; i < this.props.expenses.length; i++) {

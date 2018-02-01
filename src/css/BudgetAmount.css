@@ -1,5 +1,5 @@
 .budget-container {
-  height: 230px;
+  height: 250px;
   /* width: 440px; */
   min-width: 290px;
   max-width: 300px;
@@ -33,6 +33,9 @@ form > .budget-container_content_amount-input {
   text-align: center;
   color: white;
 }
+.budget_p {
+  margin-bottom: 5px;
+}
 
 .budget-button {
   border: none;
@@ -40,7 +43,7 @@ form > .budget-container_content_amount-input {
   border: 1px solid white;
   border-radius: 10%;
   padding: 0;
-  margin: 10px;
+  margin: 0px;
 }
 
 .budget-button p {
@@ -60,4 +63,9 @@ form > .budget-container_content_amount-input {
 .budget-add-button {
   background-color: green;
   margin: 0;
+}
+
+.green-text {
+  color: green;
+  font-weight: bolder;
 }
