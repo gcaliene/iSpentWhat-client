@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import { fetchBudget } from '../../actions/action';
 
