@@ -3,7 +3,10 @@
   border: 2px solid #4c9cf1;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 82px;
+  /* margin-top: 82px; */
+  margin-top: 98px;
+  padding-bottom: 5px;
+
   margin-bottom: 0px;
   border: 2px solid #4c9cf1;
   max-height: 550px;
@@ -15,14 +18,25 @@
 }
 
 .edit-expense-wrapper {
-  background-color: #232323;
+  /* background-color: #232323;
   border: 2px solid #4c9cf1;
   margin-right: auto;
   margin-left: auto;
   margin-top: 82px;
   margin-bottom: 0px;
   border: 2px solid #4c9cf1;
-  max-height: 650px;
+  max-height: 650px; */
+  background-color: #232323;
+  border: 2px solid #4c9cf1;
+  margin-right: auto;
+  margin-left: auto;
+  /* margin-top: 82px; */
+  margin-top: 98px;
+  padding-bottom: 5px;
+
+  margin-bottom: 0px;
+  border: 2px solid #4c9cf1;
+  max-height: 550px;
 }
 
 .edit-expense-wrapper h1 {

@@ -25,9 +25,18 @@
 }
 
 .input-button {
-  background-color: none;
+  background-color: #0099ff;
   border: none;
-  color: #0099ff;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10%;
+  padding: 0;
+}
+
+.input-button p {
+  margin: 0;
+  line-height: 0;
+  padding: 12px;
 }
 
 button {
@@ -39,9 +48,10 @@ button {
 @media only screen and (max-width: 420px) {
   .input-button {
     position: fixed;
-    left: 35px;
-    bottom: 35px;
-    height: 70px;
+    left: 20px;
+    bottom: 52px;
+    height: 35px;
+    padding: 8px 0px 0px 0px;
     z-index: 10;
   }
 }
