@@ -53,7 +53,7 @@ class BudgetAmount extends React.Component {
     // this.setState(prevState => ({
     //   isToggleOn: !prevState.isToggleOn
     // }));
-    window.location = '/dashboard';
+    // window.location = '/dashboard';
   }
 
   onSubmit = e => {
