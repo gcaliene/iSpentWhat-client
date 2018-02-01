@@ -57,11 +57,11 @@ button {
 @media only screen and (max-width: 420px) {
   .add-expense-wrapper {
     margin: 10px;
-    margin-top: 82px;
+    margin-top: 100px;
     margin-bottom: 0px;
     border: 2px solid #4c9cf1;
     max-height: 550px;
-    min-height: 85vh;
+    min-height: 83vh;
   }
   .cross-exit {
     display: block;

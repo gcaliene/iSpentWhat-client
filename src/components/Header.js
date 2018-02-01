@@ -37,6 +37,10 @@ class Header extends React.Component {
   handleLogin() {
     $('#js-front-page-content').removeClass('front-page-content');
     $('#js-front-page-content').addClass('front-page-content-open-form');
+    $('#js-opacity-layer').removeClass('opacity-layer');
+    $('#js-opacity-layer').addClass('opacity-layer-open-form');
+    $('#js-img-layer').removeClass('img-layer');
+    $('#js-img-layer').addClass('img-layer-open-form');
     $('#id-front-page-register-login-button').addClass('hidden');
     $('#FrontPage-FromLogin').removeClass('hidden');
     $('#123').removeClass('hidden');
@@ -47,6 +51,10 @@ class Header extends React.Component {
   handleLoginRegisterClose() {
     $('#js-front-page-content').removeClass('front-page-content-open-form');
     $('#js-front-page-content').addClass('front-page-content');
+    $('#js-opacity-layer').addClass('opacity-layer');
+    $('#js-opacity-layer').removeClass('opacity-layer-open-form');
+    $('#js-img-layer').addClass('img-layer');
+    $('#js-img-layer').removeClass('img-layer-open-form');
     $('#id-front-page-register-login-button').removeClass('hidden');
     $('#FrontPage-FromLogin').addClass('hidden');
     $('#FrontPage-FromRegister').addClass('hidden');

@@ -3,8 +3,17 @@
 }
 
 .expense-filter-wrapper {
-  padding: 0px 0px 20px 0px; /* no padding on top*/
+  padding: 0px 0px 15px 0px; /* no padding on top*/
   margin-top: 85px;
+}
+
+.expense-filter-wrapper input {
+  margin-bottom: 0px;
+}
+.expense-filter-wrapper h1 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: #4c9cf1;
 }
 
 .expense-filter-date-label {

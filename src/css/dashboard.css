@@ -19,6 +19,7 @@
 @media only screen and (max-width: 420px) {
   .dashboard {
     background-color: #232323;
+    margin-top: 112px;
   }
 
   .plus-circle {

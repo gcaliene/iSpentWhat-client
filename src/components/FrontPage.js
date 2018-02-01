@@ -21,7 +21,10 @@ class FrontPage extends React.Component {
   handleRegister() {
     $('#js-front-page-content').removeClass('front-page-content');
     $('#js-front-page-content').addClass('front-page-content-open-form');
-
+    $('#js-opacity-layer').removeClass('opacity-layer');
+    $('#js-opacity-layer').addClass('opacity-layer-open-form');
+    $('#js-img-layer').removeClass('img-layer');
+    $('#js-img-layer').addClass('img-layer-open-form');
     $('#id-front-page-register-login-button').addClass('hidden');
     $('#FrontPage-FromRegister').removeClass('hidden');
     $('#123').removeClass('hidden');
@@ -34,8 +37,8 @@ class FrontPage extends React.Component {
     return (
       <div className="FrontPage-container">
         <Header />
-        <div className="opacity-layer" />
-        <div className="img-layer" />
+        <div id="js-opacity-layer" className="opacity-layer" />
+        <div id="js-img-layer" className="img-layer" />
 
         <div id="js-front-page-content" className="front-page-content">
           <div className="front-page-content-text container">
@@ -75,30 +78,70 @@ class FrontPage extends React.Component {
             <FormLogin />
           </div>
         </div>
-        <div className="section section_1 flexcontainer">
-          <div className="half left-half budgeting">
-            <h1 className="budgeting_title">
-              Set Your <br /> Budget
-            </h1>
-            <p>
-              Going out for one night? <br /> Set a budget and <br /> all your
-              expenses will update <br /> the remaining amount.
-            </p>
-          </div>
-          <div className=" half right-half budgeting_picture">hola</div>
-        </div>
-        <div className="section section_2 flexcontainer-reverse-wrap ">
-          <div className="half left-half tracking_picture">hola2</div>
-          <div className=" half right-half tracking">
-            <h1 className="budgeting_title">
-              Track Your<br /> Spending
-            </h1>
-            <p>
-              Easily add and edit <br />all your expenses and watch <br />as it
-              deducts from <br />your set budget.{' '}
-            </p>
+        <div className="section_1">
+          <div className="section  flexcontainer">
+            <div className="half left-half half-text budgeting">
+              <h1 className="budgeting_title">
+                Set Your <br /> Budget
+              </h1>
+              <p>
+                Going out for one night? <br /> Set a budget and <br /> all your
+                expenses will update <br /> the remaining amount.
+              </p>
+            </div>
+            <div className=" half right-half  half-img">
+              <div className="img-container">
+                <img src="images/Add-expense.PNG" alt="" />
+              </div>
+            </div>
           </div>
         </div>
+
+        <div className="background-color section_2">
+          <div className="section  flexcontainer-reverse-wrap ">
+            <div
+              id="js-opacity-layer-section"
+              className="opacity-layer-section"
+            />
+            <div id="js-img-layer-section" className="img-layer-section" />
+            <div className="half left-half half-img">
+              <div className="img-container">
+                <img src="images/Add-expense.PNG" alt="" />
+              </div>
+            </div>
+            <div className=" half right-half half-text tracking">
+              <h1 className="budgeting_title">
+                Track Your<br /> Spending
+              </h1>
+              <p>
+                Easily add and edit <br />all your expenses and watch <br />as
+                it deducts from <br />your set budget.{' '}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="section_1">
+          <div className="section  flexcontainer">
+            <div className="half left-half half-text budgeting">
+              <h1 className="budgeting_title">
+                Filter Through <br /> Your Expenses
+              </h1>
+              <p>
+                Filter through your expenses by a <br />
+                specific word, date range, or even <br />
+                organize the list by the most <br />
+                recent expense or highest amount.
+              </p>
+            </div>
+            <div className=" half right-half  half-img">
+              <div className="img-container">
+                <img src="images/filter-expenses.PNG" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <Footer />
       </div>
     );
