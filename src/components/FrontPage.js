@@ -97,7 +97,7 @@ class FrontPage extends React.Component {
           </div>
         </div>
 
-        <div className="background-color section_2">
+        <div className="background-color section_1">
           <div className="section  flexcontainer-reverse-wrap ">
             <div
               id="js-opacity-layer-section"
@@ -130,8 +130,8 @@ class FrontPage extends React.Component {
               <p>
                 Filter through your expenses by a <br />
                 specific word, date range, or even <br />
-                organize the list by the most <br />
-                recent expense or highest amount.
+                organize the list by the most recent<br />
+                expenses or highest amounts first.
               </p>
             </div>
             <div className=" half right-half  half-img">

@@ -14,10 +14,10 @@
   padding-left: 15%;
   padding-right: 15%;
 }
-.section_2 {
-  /* background: white; */
+/* .section_2 {
+  background: white;
   width: 100%;
-}
+} */
 .img-layer-section {
   z-index: -20;
   background-image: url('./images/dinner-scene.jpg');
@@ -114,6 +114,20 @@
   /* background-color: white; */
 }
 
+.img-container {
+  /* top: 0; */
+  /* left: 0; */
+  display: block;
+  /* width: 50%; */
+  margin-left: auto;
+  margin-right: auto;
+  height: 450px;
+  /* width: 69%; */
+  width: 18%;
+
+  /* background-color: white; */
+}
+
 .img-container img {
   height: 100%;
   border-radius: 11%;
@@ -126,6 +140,11 @@
   line-height: 2.3rem;
   font-size: 18px;
   padding-bottom: 25px;
+}
+
+.left-half.half-img > .img-container {
+  margin-left: 29%;
+  /* background-color: green; */
 }
 
 .left-half.half-img {
@@ -144,11 +163,26 @@
   text-align: center;
 }
 
+@media only screen and (max-width: 948px) and (min-width: 664px) {
+  .img-layer-section {
+    height: 850px;
+  }
+
+  .opacity-layer-section {
+    height: 850px;
+  }
+  .section {
+    /* background: pink; */
+    margin: 0;
+    height: 850px;
+  }
+}
+
 @media only screen and (max-width: 664px) {
   .section {
     /* background: pink; */
     margin: 0;
-    height: 750px;
+    height: 850px;
   }
 
   .left-half {
@@ -156,6 +190,26 @@
   }
   .right-half {
     margin-top: 0px;
-    border-top: 2px solid grey;
+    /* border-top: 2px solid grey; */
+  }
+  .half-text {
+    height: 290px;
+    max-height: 325px;
+    border: 2px solid #0099ff;
+    max-width: 562px;
+  }
+  .img-container {
+    margin-left: 17%;
+  }
+  .img-layer-section {
+    height: 850px;
+  }
+
+  .opacity-layer-section {
+    height: 850px;
+  }
+  .left-half.half-img > .img-container {
+    margin-left: 17%;
+    /* background-color: green; */
   }
 }

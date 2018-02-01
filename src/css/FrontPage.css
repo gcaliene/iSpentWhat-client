@@ -102,6 +102,77 @@
   padding: 15px;
 }
 
+@media only screen and (max-width: 932px) and (min-width: 420px) {
+  .img-layer-open-form {
+    z-index: -20;
+    background-image: url('./images/wallstreet.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 828px;
+    position: absolute;
+  }
+
+  .opacity-layer-open-form {
+    z-index: -10;
+    opacity: 0.8;
+    background-color: black;
+    width: 100%;
+    height: 828px;
+    position: absolute;
+  }
+  .img-layer {
+    z-index: -20;
+    background-image: url('./images/wallstreet.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 622px;
+
+    /* height: 600px; */
+    position: absolute;
+  }
+
+  .opacity-layer {
+    z-index: -10;
+    opacity: 0.8;
+    background-color: black;
+    height: 622px;
+
+    width: 100%;
+    /* height: 600px; */
+    position: absolute;
+  }
+  .front-page-content {
+    margin-top: 92px;
+    /* padding-bottom: 100px; */
+    padding-top: 100px;
+    /* height: 545px; */
+    height: 524px;
+
+    /* filter: grayscale(100%); */
+  }
+  .front-page-content-open-form {
+    margin-top: 92px;
+    /* padding-bottom: 100px; */
+    padding-bottom: 183px;
+
+    padding-top: 100px;
+    height: 563px;
+    /* filter: grayscale(100%); */
+  }
+}
+
 @media only screen and (max-width: 420px) {
   .icon-container {
     margin-top: 0px;
@@ -113,6 +184,33 @@
     color: #33ccff;
     /* padding-left: 5px;
     padding-right: 5px; */
+  }
+  .img-layer {
+    z-index: -20;
+    background-image: url('./images/wallstreet.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 622px;
+
+    /* height: 600px; */
+    position: absolute;
+  }
+
+  .opacity-layer {
+    z-index: -10;
+    opacity: 0.8;
+    background-color: black;
+    height: 622px;
+
+    width: 100%;
+    /* height: 600px; */
+    position: absolute;
   }
 
   .img-layer-open-form {
@@ -150,7 +248,8 @@
     /* margin-top: 52px; */
     height: 94vh;
     padding-top: 10px;
-    padding-bottom: 173px;
+    /* padding-bottom: 173px; */
+    padding-bottom: 195px;
   }
 
   .front-page-content-text {
