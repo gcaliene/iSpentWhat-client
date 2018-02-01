@@ -201,9 +201,10 @@ export const fetchBudget = () => dispatch => {
       return res.json();
     })
     .then(data => {
+      // console.log(data.budget[0]);
       dispatch(fetchBudgetSuccess(data.budget));
     })
-    .catch(e => console.log(e));
+    .catch(e => console.log('No amount for budget found.'));
 };
 
 export const addExpenseToBackend = expense => dispatch => {
@@ -261,7 +262,7 @@ export const deleteBudget = () => dispatch => {
       Authorization: `Bearer ${authToken}`
     }
   })
-    // .then(() => dispatch(fetchBudget()))
+    .then(() => dispatch(fetchBudget()))
     .catch(e => console.log(e));
 };
 

@@ -9,6 +9,7 @@ import Footer from '../Footer';
 import BudgetAmount from './BudgetAmount';
 
 import { addBudget } from '../../actions/action';
+import { deleteBudget } from '../../actions/action';
 
 import '../../css/dashboard.css';
 import '../../css/Footer.css';
@@ -33,6 +34,12 @@ class DashboardPage extends React.Component {
                 this.props.history.push('/dashboard');
                 console.log(budget);
               }}
+              handleClick={() => {
+                console.log(this.props.budget);
+                this.props.dispatch(deleteBudget());
+                this.props.history.push('/dashboard');
+                console.log(this);
+              }}
             />
             <ExpenseList />
           </div>
@@ -47,7 +54,6 @@ class DashboardPage extends React.Component {
 }
 // implicitly returning so no curlies need
 const mapStateToProps = state => {
-  console.log(state);
   return {
     user: state.user.user
   };

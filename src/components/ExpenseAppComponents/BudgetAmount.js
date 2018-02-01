@@ -3,35 +3,68 @@ import { connect } from 'react-redux';
 // import moment from 'moment';
 
 import { fetchBudget } from '../../actions/action';
-import { deleteBudget } from '../../actions/action';
+// import { deleteBudget } from '../../actions/action';
 
 import '../../css/BudgetAmount.css';
 
 class BudgetAmount extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
+    console.log(this.state);
+    console.log(props);
     this.state = {
-      amount: props.expense ? (props.expense.amount / 100).toString() : ''
+      // amount: props.budget ? (props.budget.amount / 100).toString() : ''
+      budget: ''
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    //changed from componentDidMount to componentWillMount
     this.props.dispatch(fetchBudget());
+    console.log(this.props);
+    this.setState({ budget: this.state.budget || this.props.budget });
+  }
+
+  componentDidUpdate() {
+    // this.setState({ budget: this.state.budget || this.props.budget });
+    // this.props.dispatch(fetchBudget());
   }
 
   onAmountChange = e => {
-    const amount = e.target.value;
-    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
-      this.setState(() => ({ amount }));
+    const budget = e.target.value;
+    if (!budget || budget.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() => ({ budget }));
     }
   };
 
+  handleClick() {
+    console.log(this.state);
+    this.setState({ budget: '' });
+    console.log(this.state);
+
+    //   console.log(typeof this.props.budget);
+    //   console.log(typeof this.state.budget);
+    this.props.handleClick({ budget: '' });
+    //   console.log(this.state.budget);
+    //   this.setState({ budget: '' });
+    //   console.log(this.state.budget);
+    // }}
+    // this.setState(prevState => ({
+    //   isToggleOn: !prevState.isToggleOn
+    // }));
+    window.location = '/dashboard';
+  }
+
   onSubmit = e => {
     e.preventDefault();
-    this.setState(() => ({ error: '' })); //an empty string does not exist, therefore false
+    // this.setState(() => ({ error: '' })); //an empty string does not exist, therefore false
+    console.log(this.state.budget);
+    console.log(typeof this.props.budget);
+    console.log(typeof this.state.budget);
+    this.setState({ budget: this.state.budget });
     this.props.onSubmit({
-      amount: parseFloat(this.state.amount, 10), //we are multiplying by 100 to wrok with pennies
+      amount: parseFloat(this.state.budget, 10), //we are multiplying by 100 to wrok with pennies
       // createdAt: this.state.createdAt.valueOf(),
       user: this.props.user
     });
@@ -52,7 +85,7 @@ class BudgetAmount extends React.Component {
             type="number"
             className="will-be-hidden budget-container_content_amount-input"
             placeholder="Enter a budget here... (optional)"
-            value={this.state.amount}
+            value={this.state.budget}
             onChange={this.onAmountChange}
             required
           />
@@ -67,10 +100,7 @@ class BudgetAmount extends React.Component {
           <p>Any expense you now add will deduct from the budget above.</p>
           <button
             className="budget-button budget-delete-button"
-            onClick={() => {
-              this.props.dispatch(deleteBudget(this.props.match));
-              window.location = './dashboard';
-            }}
+            onClick={this.handleClick}
           >
             <p>Delete</p>
           </button>
@@ -78,11 +108,12 @@ class BudgetAmount extends React.Component {
       );
     }
 
-    let budgetMinusExpenses = this.props.budget;
+    // let budgetMinusExpenses = this.props.budget;
+    let budgetMinusExpenses = this.state.budget || this.props.budget;
 
     for (let i = 0; i < this.props.expenses.length; i++) {
       if (this.props.expenses[i].user === this.props.user) {
-        console.log(this.props.expenses[i].amount);
+        console.log(typeof this.props.expenses[i].amount);
         budgetMinusExpenses -= this.props.expenses[i].amount / 100;
       }
     }
