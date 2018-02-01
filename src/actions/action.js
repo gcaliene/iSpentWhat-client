@@ -251,6 +251,20 @@ export const deleteExpenseFromBackend = _id => dispatch => {
     .catch(e => console.log(e));
 };
 
+export const deleteBudget = () => dispatch => {
+  const authToken = localStorage.getItem('token');
+
+  fetch(`${API_BASE_URL}/api/budget`, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    // .then(() => dispatch(fetchBudget()))
+    .catch(e => console.log(e));
+};
+
 //////////////////action generator///////////////////////////
 //////////////////////////EDIT_EXPENSE////////////////////////////////
 export const editExpense = (id, updates) => ({

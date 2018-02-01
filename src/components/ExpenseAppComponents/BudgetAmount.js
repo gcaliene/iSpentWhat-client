@@ -3,19 +3,15 @@ import { connect } from 'react-redux';
 // import moment from 'moment';
 
 import { fetchBudget } from '../../actions/action';
+import { deleteBudget } from '../../actions/action';
 
 import '../../css/BudgetAmount.css';
 
 class BudgetAmount extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       amount: props.expense ? (props.expense.amount / 100).toString() : ''
-      // amount: props.expense ? (props.expense.amount / 100).toString()
-
-      // createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
-      // error: ''
     };
   }
 
@@ -69,10 +65,13 @@ class BudgetAmount extends React.Component {
       firstTimeBudget = (
         <div>
           <p>Any expense you now add will deduct from the budget above.</p>
-          <button className="budget-button budget-edit-button">
-            <p>Edit</p>
-          </button>
-          <button className="budget-button budget-delete-button">
+          <button
+            className="budget-button budget-delete-button"
+            onClick={() => {
+              this.props.dispatch(deleteBudget(this.props.match));
+              window.location = './dashboard';
+            }}
+          >
             <p>Delete</p>
           </button>
         </div>
@@ -84,18 +83,12 @@ class BudgetAmount extends React.Component {
     for (let i = 0; i < this.props.expenses.length; i++) {
       if (this.props.expenses[i].user === this.props.user) {
         console.log(this.props.expenses[i].amount);
-
-        // expenseAmountArray.push(this.props.expenses[i].amount);
-
         budgetMinusExpenses -= this.props.expenses[i].amount / 100;
       }
-      // console.log(expenseAmountArray);
     }
-    // console.log(this.props);
 
     return (
       <div>
-        {console.log(this.props.budget)}
         <div className="budget-container">
           <div className="budget-container_content">
             <h3 className="budget-container_content_title">Budget Amount </h3>
@@ -116,11 +109,6 @@ class BudgetAmount extends React.Component {
 const mapStateToProps = state => {
   const user = state.user.user;
   const budget = state.budget.budget;
-  // const expenses = if
-  // console.log(state.expenses.length);
-  // let expenses = [];
-  // expenses =
-  // const expenses = state.
   return {
     user: user,
     budget: budget,

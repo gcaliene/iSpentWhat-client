@@ -91,7 +91,7 @@ class FrontPage extends React.Component {
             </div>
             <div className=" half right-half  half-img">
               <div className="img-container">
-                <img src="images/Add-expense.PNG" alt="" />
+                <img src="images/budget-expense.PNG" alt="" />
               </div>
             </div>
           </div>
