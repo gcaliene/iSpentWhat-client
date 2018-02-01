@@ -243,7 +243,6 @@ export const addBudget = budget => dispatch => {
 
 export const deleteExpenseFromBackend = _id => dispatch => {
   const authToken = localStorage.getItem('token');
-
   fetch(`${API_BASE_URL}/expenses/${_id}`, {
     method: 'delete',
     headers: {
@@ -255,9 +254,13 @@ export const deleteExpenseFromBackend = _id => dispatch => {
     .catch(e => console.log(e));
 };
 
+export const DELETE_BUDGET_SUCCESS = 'DELETE_BUDGET_SUCCESS';
+export const deleteBudgetSuccess = () => ({
+  type: DELETE_BUDGET_SUCCESS
+});
 export const deleteBudget = () => dispatch => {
   const authToken = localStorage.getItem('token');
-  fetch(`${API_BASE_URL}/api/budget`, {
+  fetch(`${API_BASE_URL}/api/budget/`, {
     method: 'delete',
     headers: {
       'Content-Type': 'application/json',
@@ -266,7 +269,7 @@ export const deleteBudget = () => dispatch => {
   })
     .then(() => {
       console.log('deleted budget');
-      dispatch(fetchBudgetSuccess());
+      dispatch(deleteBudgetSuccess());
     })
     .catch(e => console.log(e));
 };

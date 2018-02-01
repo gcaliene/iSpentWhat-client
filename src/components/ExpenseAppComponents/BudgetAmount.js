@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import moment from 'moment';
+import $ from 'jquery';
 
 import { fetchBudget } from '../../actions/action';
 // import { deleteBudget } from '../../actions/action';
@@ -43,7 +44,8 @@ class BudgetAmount extends React.Component {
     //   budget: '';
     // });
     this.props.handleClick({ budget: '' });
-    window.location = '/dashboard';
+    $('#js-budget-amount-input').val(0);
+    // window.location = '/dashboard';
     // console.log(e.target.value);
     // // const budget = this.state.budget;
     // console.log(this.state);
