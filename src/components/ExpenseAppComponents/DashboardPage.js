@@ -10,12 +10,15 @@ import BudgetAmount from './BudgetAmount';
 
 import { addBudget } from '../../actions/action';
 import { deleteBudget } from '../../actions/action';
+import { fetchBudget } from '../../actions/action';
 
 import '../../css/dashboard.css';
 import '../../css/Footer.css';
 
 class DashboardPage extends React.Component {
   componentWillMount() {
+    this.props.dispatch(fetchBudget());
+
     const token = localStorage.getItem('token');
     if (typeof token !== 'string') {
       window.location = '/';
