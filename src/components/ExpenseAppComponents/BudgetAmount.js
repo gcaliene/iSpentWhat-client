@@ -82,7 +82,6 @@ class BudgetAmount extends React.Component {
     let budgetMinusExpenses = this.props.budget;
 
     for (let i = 0; i < this.props.expenses.length; i++) {
-      let expenseAmountArray = [];
       if (this.props.expenses[i].user === this.props.user) {
         console.log(this.props.expenses[i].amount);
 
