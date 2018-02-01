@@ -38,7 +38,6 @@ class DashboardPage extends React.Component {
                 console.log(this.props.budget);
                 this.props.dispatch(deleteBudget());
                 console.log(this);
-                window.location = '/dashboard';
               }}
             />
             <ExpenseList />

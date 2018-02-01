@@ -9,8 +9,8 @@ export default (state = budgetReducerDefaultState, action) => {
     case 'FETCH_BUDGET_SUCCESS':
       // console.log(action.budget[0].amount);
       return {
-        budget: action.budget[0].amount || '', //this is going to be an array not an object, Jim really helped out on this one.
-        user: action.budget[0].user || ''
+        budget: action.budget[0].amount, //this is going to be an array not an object, Jim really helped out on this one.
+        user: action.budget[0].user
       };
 
     default:

@@ -23,13 +23,13 @@ class BudgetAmount extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchBudget());
     console.log(this.props);
-    this.setState({ budget: this.state.budget || this.props.budget });
+    // this.setState({ budget: this.props.budget || this.state.budget });
   }
 
-  componentDidUpdate() {
-    // this.setState({ budget: this.state.budget || this.props.budget });
-    // this.props.dispatch(fetchBudget());
-  }
+  // componentDidUpdate() {
+  //   // this.setState({ budget: this.state.budget || this.props.budget });
+  //   this.props.dispatch(fetchBudget());
+  // }
 
   onAmountChange = e => {
     const budget = e.target.value;
@@ -38,22 +38,17 @@ class BudgetAmount extends React.Component {
     }
   };
 
-  handleClick() {
-    console.log(this.state);
-    this.setState({ budget: '' });
-    console.log(this.state);
-
-    //   console.log(typeof this.props.budget);
-    //   console.log(typeof this.state.budget);
+  handleClick(e) {
+    // this.setState(() => {
+    //   budget: '';
+    // });
     this.props.handleClick({ budget: '' });
-    //   console.log(this.state.budget);
-    //   this.setState({ budget: '' });
-    //   console.log(this.state.budget);
-    // }}
-    // this.setState(prevState => ({
-    //   isToggleOn: !prevState.isToggleOn
-    // }));
-    // window.location = '/dashboard';
+    window.location = '/dashboard';
+    // console.log(e.target.value);
+    // // const budget = this.state.budget;
+    // console.log(this.state);
+    // this.setState({ budget: '' });
+    // console.log(this.state);
   }
 
   onSubmit = e => {
