@@ -59,12 +59,14 @@ class BudgetAmount extends React.Component {
           <br />
           <input
             id="js-budget-amount-input"
-            type="number"
+            type="text"
             className="will-be-hidden budget-container_content_amount-input"
             placeholder="Enter a budget here... (optional)"
             value={this.state.budget}
             onChange={this.onAmountChange}
             required
+            size="6"
+            maxLength="10"
           />
           <button className="budget-button budget-add-button">
             <p>Add Budget</p>
@@ -89,7 +91,7 @@ class BudgetAmount extends React.Component {
       );
     }
 
-    let budgetMinusExpenses = this.state.budget || this.props.budget;
+    let budgetMinusExpenses = this.state.budget || this.props.budget || 0;
 
     for (let i = 0; i < this.props.expenses.length; i++) {
       if (this.props.expenses[i].user === this.props.user) {
