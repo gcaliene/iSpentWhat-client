@@ -18,40 +18,40 @@ import '../../css/Footer.css';
 class DashboardPage extends React.Component {
   componentWillMount() {
     this.props.dispatch(fetchBudget());
-
+  }
+  render() {
     const token = localStorage.getItem('token');
     if (typeof token !== 'string') {
       window.location = '/';
-    }
-  }
-  render() {
-    return (
-      <div>
-        <div className=" dashboard">
-          <Header />
-          <div className="container">
-            <ExpenseFilters />
-            <BudgetAmount
-              onSubmit={budget => {
-                this.props.dispatch(addBudget(budget));
-                this.props.history.push('/dashboard');
-                console.log(budget);
-              }}
-              handleClick={() => {
-                console.log(this.props.budget);
-                this.props.dispatch(deleteBudget());
-                console.log(this);
-              }}
-            />
-            <ExpenseList />
+    } else {
+      return (
+        <div>
+          <div className=" dashboard">
+            <Header />
+            <div className="container">
+              <ExpenseFilters />
+              <BudgetAmount
+                onSubmit={budget => {
+                  this.props.dispatch(addBudget(budget));
+                  this.props.history.push('/dashboard');
+                  console.log(budget);
+                }}
+                handleClick={() => {
+                  console.log(this.props.budget);
+                  this.props.dispatch(deleteBudget());
+                  console.log(this);
+                }}
+              />
+              <ExpenseList />
+            </div>
+            <NavLink to="/dashboard/create" activeClassName="is-active">
+              <i className="fas fa-plus fa-5x plus-circle" />
+            </NavLink>
           </div>
-          <NavLink to="/dashboard/create" activeClassName="is-active">
-            <i className="fas fa-plus fa-5x plus-circle" />
-          </NavLink>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    );
+      );
+    }
   }
 }
 // implicitly returning so no curlies need

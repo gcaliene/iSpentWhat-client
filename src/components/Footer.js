@@ -5,7 +5,7 @@ import $ from 'jquery';
 import '../css/Footer.css';
 
 class Footer extends React.Component {
-  componentDidUpdate() {
+  componentDidMount() {
     if ($('.expense-item-list').length <= 3) {
       $('#id-footer-text').html('');
       $('#id-footer-text').append(
